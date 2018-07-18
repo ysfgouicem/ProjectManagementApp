@@ -1,0 +1,22 @@
+<h2>Login Form</h2>
+<?php
+$form->setAttribute('action', '');
+$form->prepare();
+echo $this->form()->openTag($form);
+echo '<table>';
+echo '<tr>';
+echo '<td><label>User email</label></td>';
+echo '<td>'.$this->formRow($form->get('useremail')).'</td>';
+echo '</tr>';
+echo '<tr>';
+echo '<td><label>User password</label></td>';
+echo '<td>'.$this->formRow($form->get('userpassword')).'</td>';
+echo '</tr>';
+echo '<tr>';
+echo '<td></td><td>'.$this->formRow($form->get('loginCsrf')).'</td>';
+echo '</tr>';
+echo '<tr>';
+echo '<td></td><td>'.$this->formRow($form->get('submit')).'</td>';
+echo '</tr>';
+echo $this->form()->closeTag();
+?>
