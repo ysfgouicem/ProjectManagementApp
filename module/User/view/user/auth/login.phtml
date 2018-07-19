@@ -1,4 +1,9 @@
-<h2>Login Form</h2>
+<?php
+ // module/Album/view/album/album/index.phtml:
+
+ $title = 'Login';
+ $this->headTitle($title);
+ ?>
 <?php
 $form->setAttribute('action', '');
 $form->prepare();
@@ -16,7 +21,7 @@ echo '<tr>';
 echo '<td></td><td>'.$this->formRow($form->get('loginCsrf')).'</td>';
 echo '</tr>';
 echo '<tr>';
-echo '<td></td><td>'.$this->formRow($form->get('submit')).'</td>';
+echo '<td></td><td class=" btn btn-lg btn-primary btn-block">'.$this->formRow($form->get('submit')).'</td>';
 echo '</tr>';
 echo $this->form()->closeTag();
 ?>

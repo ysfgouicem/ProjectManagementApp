@@ -11,18 +11,19 @@ namespace Project\Model;
      {
          $this->tableGateway = $tableGateway;
      }
-
+     /* method to get all table rows */
      public function fetchAll()
      {
          $resultSet = $this->tableGateway->select();
          return $resultSet;
      }
+      /* method to get project(s) with a specific global_status */
      public function fetchProjects($global_status)
      {
          $resultSet = $this->tableGateway->select(array('global_status' => $global_status));
          return $resultSet;
      }
-
+     /* method to get a project bu it's name */
      public function getProject($name)
      {
          $name  = (string) $name;

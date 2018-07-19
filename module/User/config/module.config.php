@@ -2,40 +2,39 @@
 return array(
     'router' => array(
         'routes' => array(
-            'user' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/user',
-                    'defaults' => array(
-                        'controller'    => 'User\Controller\Auth',
-                        'action'        => 'login'
-                    ),
-                ),
-            ),
-            'user_login' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/user/login',
-                    'defaults' => array(
-                        'controller'    => 'User\Controller\Auth',
-                        'action'        => 'login'
-                    ),
-                ),
-            ),
-            'user_logout' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/user/logout',
-                    'defaults' => array(
-                        'controller'    => 'User\Controller\Auth',
-                        'action'        => 'logout'
-                    ),
-                ),
-            ),
+              'user' => array(
+                  'type' => 'Literal',
+                  'options' => array(
+                      'route' => '/user',
+                      'defaults' => array(
+                          'controller'    => 'User\Controller\Auth',
+                          'action'        => 'login'
+                      ),
+                  ),
+              ),
+              'user_login' => array(
+                  'type' => 'Literal',
+                  'options' => array(
+                      'route' => '/user/login',
+                      'defaults' => array(
+                          'controller'    => 'User\Controller\Auth',
+                          'action'        => 'login'
+                      ),
+                  ),
+              ),
+              'user_logout' => array(
+                  'type' => 'Literal',
+                  'options' => array(
+                      'route' => '/user/logout',
+                      'defaults' => array(
+                          'controller'    => 'User\Controller\Auth',
+                          'action'        => 'logout'
+                      ),
+                  ),
+              ),
         ),
     ),
     'service_manager' => array(
-
     ),
     'controllers' => array(
         'invokables' => array(

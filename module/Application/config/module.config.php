@@ -20,6 +20,36 @@ return array(
                     ),
                 ),
             ),
+            'user' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/user',
+                    'defaults' => array(
+                        'controller'    => 'User\Controller\Auth',
+                        'action'        => 'login'
+                    ),
+                ),
+            ),
+            'user_login' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/user/login',
+                    'defaults' => array(
+                        'controller'    => 'User\Controller\Auth',
+                        'action'        => 'login'
+                    ),
+                ),
+            ),
+            'user_logout' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/user/logout',
+                    'defaults' => array(
+                        'controller'    => 'User\Controller\Auth',
+                        'action'        => 'logout'
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
