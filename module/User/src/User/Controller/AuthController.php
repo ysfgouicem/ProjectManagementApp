@@ -33,7 +33,7 @@ class AuthController extends AbstractActionController
     {
         if($this->getAuthService()->hasIdentity())
         {
-            return $this->redirect()->toUrl('/');
+            return $this->redirect()->toUrl('/ProjectManagementApp/public/project');
         }
         $form = new LoginFrm();
         if($this->getRequest()->isPost())
@@ -55,7 +55,7 @@ class AuthController extends AbstractActionController
                     $session = new Container('User');
                     $session->offsetSet('email', $data['email']);
 
-                    $this->redirect()->toUrl('/');
+                    $this->redirect()->toUrl('/ProjectManagementApp/public/project');
                 }
                 else
                 {
@@ -71,6 +71,6 @@ class AuthController extends AbstractActionController
         $session = new Container('User');
         $session->getManager()->destroy();
         $this->getAuthService()->clearIdentity();
-        return $this->redirect()->toUrl('/user/login');
+        return $this->redirect()->toUrl('/ProjectManagementApp/public/user/login');
     }
 }

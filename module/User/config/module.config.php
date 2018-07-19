@@ -45,6 +45,7 @@ return array(
     'view_manager' => array(
         'template_map' => array(
             'user/auth/login'    => __DIR__ . '/../view/user/auth/login.phtml',
+            'user/auth/logout'    => __DIR__ . '/../view/user/auth/logout.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
