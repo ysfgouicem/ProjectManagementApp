@@ -1,10 +1,4 @@
 <?php
-/*
- * Module   : User
- * Filename : LoginFrm.php
- * Author   : Vinoj Cardoza
- * Created  : 8th March 2015
- */
 
 namespace User\Form;
 
@@ -23,17 +17,27 @@ class LoginFrm extends Form
 
         $this->add(array(
             'name' => 'useremail',
-            'type' => 'Text',
             'filters' => $filters,
             'validators' => array(
                 array('name' => 'EmailAddress')
             ),
+            'attributes' => array(
+            'type' => 'text',
+            'id'   => 'email_input',
+            'class' => 'form-control',
+            'palceholder' => 'insert mail here',
+            'required' => 'required',
+        ),
         ));
 
         $this->add(array(
             'name' => 'userpassword',
             'type' => 'Password',
             'required' => true,
+            'attributes' => array(
+              'id'   => 'password_input',
+              'class' => 'form-control pass',
+            ),
         ));
 
         $this->add(array(
@@ -50,7 +54,9 @@ class LoginFrm extends Form
             'name' => 'submit',
             'type' => 'submit',
             'attributes' => array(
-                'value' => 'Login'
+                'value' => 'Login',
+                'id'   => 'login_btn',
+                'class' => 'btn btn-lg btn-primary btn-block',
             ),
         ));
     }

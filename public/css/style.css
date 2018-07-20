@@ -35,3 +35,20 @@ div.container a.brand {
     margin-left: 0;
     padding: 8px 20px 12px 40px;
 }
+
+.form-signin{
+  width: 100%;
+ max-width: 430px;
+ padding: 15px;
+ margin: auto;
+}
+
+.pass{
+  margin-top: 10px ;
+}
+ #login_btn {
+   margin-top: 10px ;
+   font-weight: bold;
+  border-radius: 3px;
+  border: none;
+ }
