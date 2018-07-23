@@ -1,10 +1,4 @@
 <?php
-/*
- * Module   : User
- * Filename : AuthController.php
-
-
- */
 
 namespace User\Controller;
 

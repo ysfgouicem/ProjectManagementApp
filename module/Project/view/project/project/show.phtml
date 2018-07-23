@@ -1,0 +1,5 @@
+<h2> showing this specific project </h2>
+ <?php foreach ($Projects as $ActiveProject) :
+ echo $this->escapeHtml($ActiveProject->name);
+ echo "\n";
+ endforeach; ?>

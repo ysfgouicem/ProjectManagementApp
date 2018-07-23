@@ -52,3 +52,12 @@ div.container a.brand {
   border-radius: 3px;
   border: none;
  }
+ .project_type_active {
+   color : green ;
+ }
+ .project_type_closed {
+   color : red  ;
+ }
+ .project_type_hold {
+   color : grey ;
+ }

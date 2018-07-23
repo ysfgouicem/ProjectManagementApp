@@ -18,18 +18,21 @@ namespace Project\Controller;
         ));
      }
 
-     public function addAction()
-     {
-     }
-
      public function editAction()
      {
      }
 
-     public function deleteAction()
+     public function showAction()
      {
+       return new ViewModel(array(
+         'Projects' => $this->getProjectTable()->fetchAll(),)) ;
      }
-
+     public function womegAction()
+     {
+       var_dump('ok slqdkfjqslkjdf
+       sqmdlfkjqsdlfjk
+       sqdsmlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfmsqkmflllllllllllllllllllllllllS  ');
+     }
      public function getProjectTable()
      {
          if (!$this->ProjectTable) {
@@ -38,4 +41,14 @@ namespace Project\Controller;
          }
          return $this->ProjectTable;
      }
+
+
+     /*
+     public function addAction()
+     {
+     }
+
+     public function deleteAction()
+        {
+        } */
  }

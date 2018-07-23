@@ -2,10 +2,17 @@
 namespace Project\Model;
 
  use Zend\Db\TableGateway\TableGateway;
+ use Zend\Db\Adapter\Adapter ;
 
  class ProjectTable
  {
      protected $tableGateway;
+/*     $adapter = new Zend\Db\Adapter\Adapter(array(
+    'driver' => 'Mysqli',
+    'database' => 'auth',
+    'username' => 'root',
+    'password' => ''
+ ));*/
 
      public function __construct(TableGateway $tableGateway)
      {
@@ -23,7 +30,7 @@ namespace Project\Model;
          $resultSet = $this->tableGateway->select(array('global_status' => $global_status));
          return $resultSet;
      }
-     /* method to get a project bu it's name */
+     /* method to get a project by it's name */
      public function getProject($name)
      {
          $name  = (string) $name;
