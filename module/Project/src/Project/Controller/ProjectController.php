@@ -24,8 +24,11 @@ namespace Project\Controller;
 
      public function showAction()
      {
-       return new ViewModel(array(
-         'Projects' => $this->getProjectTable()->fetchAll(),)) ;
+       $paramName = $this->getEvent()->getRouteMatch()->getParam('name');
+       return new ViewModel (
+         array(
+              'Project' => $this->getProjectTable()->getProject($paramName),
+         ));
      }
      public function womegAction()
      {

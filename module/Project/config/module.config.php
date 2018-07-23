@@ -16,10 +16,10 @@ return array(
             'Project' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/project[/:action][/:id]',
+                    'route'    => '/project[/:action[/:name]]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
+                        'name'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
                         'controller' => 'Project\Controller\Project',
