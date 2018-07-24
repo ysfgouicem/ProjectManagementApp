@@ -1,10 +1,10 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .zf-red {
-    color:red;
+  color: red;
 }
 
 .btn-success {
@@ -18,11 +18,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
 }
 
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
+.btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
   background-color: #57a900;
 }
 
@@ -31,75 +27,88 @@ body {
 }
 
 div.container a.brand {
-    background: url("../img/linedata-logo.png") no-repeat scroll 0 10px transparent;
-    margin-left: 0;
-    padding: 8px 20px 12px 40px;
+  background: url("../img/linedata-logo.png") no-repeat scroll 0 10px transparent;
+  margin-left: 0;
+  padding: 8px 20px 12px 40px;
 }
 
-.form-signin{
+.form-signin {
   width: 100%;
- max-width: 430px;
- padding: 15px;
- margin: auto;
+  max-width: 430px;
+  padding: 15px;
+  margin: auto;
 }
 
-.pass{
-  margin-top: 10px ;
+.pass {
+  margin-top: 10px;
 }
- #login_btn {
-   margin-top: 10px ;
-   font-weight: bold;
+
+#login_btn {
+  margin-top: 10px;
+  font-weight: bold;
   border-radius: 3px;
   border: none;
- }
-
- .project_type_active {
-   color : green ;
-   font:
- }
- .project_type_closed {
-   color : red  ;
- }
- .project_type_hold {
-   color : grey ;
- }
- .project_name{
-   color: red ;
-   text-align : center ;
- }
-
- .lifecycle {
-   width: 100% ;
-   /*background-color: grey ;*/
-   height :  100%;
-   margin-top: 10px ;
-   margin-bottom: 10px ;
-   padding : 20px ;
- }
- .status{
-   background-color:  red ;
-   opacity: 0.5;
-   padding: 20px ;
- }
-.list_people{
-  background: green ;
-  padding: 20px ;
 }
-.latest_changes {
 
-  background-color: blue;
-  margin-top: 10px ;
+.project_type_active {
+  color: green;
+  font:
+}
+
+.project_type_closed {
+  color: red;
+}
+
+.project_type_hold {
+  color: grey;
+}
+
+.project_name {
+  color: red;
+  text-align: center;
+}
+
+.lifecycle {
+  width: 100%;
+  /*background-color: grey ;*/
+  height: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 20px;
 }
+
+.status {
+  padding: 20px;
+  background: rgba(255,0,0,.5);
+  color: black;
+  border-radius: 25px;
+}
+span.glyphicon-user {
+    font-size: 3.2em;
+}
+.list_people {
+  padding: 20px;
+}
+
+.latest_changes {
+  background-color: blue;
+  margin-top: 10px;
+  padding: 20px;
+}
+
 .stats {
-  background-color: black;
-  margin-top :10px ;
-  padding : 20px ;
+  margin-top: 10px;
+  padding: 20px;
+}
+#myChart{
+  width :400px ;
+  height : 400px ;
 }
 .latest_journal_entries {
-  padding: 20px ;
-  margin-top: 10px ;
+  padding: 20px;
+  margin-top: 10px;
 }
-.related_documents{ 
-  margin-top: 10px ;
+
+.related_documents {
+  margin-top: 10px;
 }

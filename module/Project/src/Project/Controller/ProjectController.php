@@ -23,19 +23,14 @@ namespace Project\Controller;
      }
 
      public function showAction()
-     {  // getting the variable from the url 
+     {  // getting the variable from the url
        $paramName = $this->getEvent()->getRouteMatch()->getParam('name');
        return new ViewModel (
          array(
               'Project' => $this->getProjectTable()->getProject($paramName),
          ));
      }
-     public function womegAction()
-     {
-       var_dump('ok slqdkfjqslkjdf
-       sqmdlfkjqsdlfjk
-       sqdsmlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfmsqkmflllllllllllllllllllllllllS  ');
-     }
+
      public function getProjectTable()
      {
          if (!$this->ProjectTable) {
@@ -44,14 +39,4 @@ namespace Project\Controller;
          }
          return $this->ProjectTable;
      }
-
-
-     /*
-     public function addAction()
-     {
-     }
-
-     public function deleteAction()
-        {
-        } */
  }

@@ -1,8 +1,8 @@
 <div class="project_name"><h2><?php
- echo $this->escapeHtml($Project->name);
+ echo $this->escapeHtml($Project->name)
  ?></h2></div>
 <div class="lifecycle col-md-12">
-<center>  <h2>  Lifecycle Space </h2> </center>
+  <center>  <h2>  Lifecycle Space </h2> </center>
   <div class="timeline" data-mode="horizontal" data-visible-items="3">
    <div class="timeline__wrap">
      <div class="timeline__items">
@@ -49,17 +49,92 @@
  </div>
 </div>
 
-<div class="status col-md-4">
-  <h2 style="color: white"> current status </h2>
+<!--<div class="status col-md-4">
+  <center>
+   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+  <h2> <?php// echo $this->escapeHtml($Project->status);?> </h2>
+</center>
+</div>  -->
+<div class="list_people col-md-12">
+<center><h2> Staff</h2></center>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#sales">Sales</a></li>
+  <li><a data-toggle="tab" href="#dev">Developement</a></li>
+  <li><a data-toggle="tab" href="#test">Testing</a></li>
+  <li><a data-toggle="tab" href="#certif">Certification</a></li>
+  <li><a data-toggle="tab" href="#release">Release</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="sales" class="tab-pane fade in active">
+    <h3>Sales Team</h3>
+    <table class="table">
+      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+             </tr>
+              </tbody>
+    </table>
+  </div>
+  <div id="dev" class="tab-pane fade">
+    <h3>Dev Team</h3>
+    <table class="table">
+      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+             </tr>
+              </tbody>
+    </table>
+  </div>
+  <div id="test" class="tab-pane fade">
+    <h3>Test Team</h3>
+    <table class="table">
+      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Patsy Mata</th> <td>Patsy_Mata@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Manager</td>
+             </tr>
+              </tbody>
+    </table>
+  </div>
+  <div id="certif" class="tab-pane fade">
+    <h3>Certification Team</h3>
+    <table class="table">
+      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+             </tr>
+             <tr> <th scope="row">Eduard Sanford</th> <td>Eduard Sanford@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+              </tr>
+              </tbody>
+    </table>
+  </div>
+  <div id="release" class="tab-pane fade">
+    <h3>Release Team</h3>
+    <table class="table">
+      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+             </tr>
+             <tr> <th scope="row">Cairo Haynes</th> <td>Cairo_Haynes@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+              </tr>
+              <tr> <th scope="row">Arandeep Salas</th> <td>Arandeep_Salas@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+               </tr>
+              </tbody>
+    </table>
+  </div>
 </div>
-<div class="list_people col-md-8">
-<h2> list of people working on the project</h2>
 </div>
 <div class="latest_changes col-md-6">
   <h2 style="color: white"> latest changes done on the project (current status)  </h2>
 </div>
 <div class="stats col-md-6">
-  <h2 style="color: white">stats space</h2>
+  <center><h2>statistics</h2><center>
+  <canvas id="myChart"></canvas>
 </div>
 <div class="related_documents col-md-12">
   <div class="panel panel-danger">
@@ -87,3 +162,36 @@
   </table>
 </div>
 </div>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["US", "EMEA", "APAC"],
+        datasets: [{
+            label: 'Status By Region',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
