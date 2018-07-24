@@ -2,7 +2,7 @@
  echo $this->escapeHtml($Project->name)
  ?></h2></div>
 <div class="lifecycle col-md-12">
-  <center>  <h2>  Lifecycle Space </h2> </center>
+  <center>  <h2>Timeline Space </h2> </center>
   <div class="timeline" data-mode="horizontal" data-visible-items="3">
    <div class="timeline__wrap">
      <div class="timeline__items">
@@ -56,7 +56,7 @@
 </center>
 </div>  -->
 <div class="list_people col-md-12">
-<center><h2> Staff</h2></center>
+<center><h2> Teams</h2></center>
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#sales">Sales</a></li>
   <li><a data-toggle="tab" href="#dev">Developement</a></li>
@@ -130,14 +130,29 @@
 </div>
 </div>
 <div class="latest_changes col-md-6">
-  <h2 style="color: white"> latest changes done on the project (current status)  </h2>
+<center><h2> Certifications </h2> </center>
+  <div class="panel panel-success">
+      <div class="panel-heading">Tested Versions</div>
+      <div class="panel-body"><ul>
+        <li>7.1.3.0003</li>
+        <li>7.4.2.0000</li>
+      </ul>
+      </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel-heading">Versions To Be Tested</div>
+        <div class="panel-body"><ul>
+          <li>7.5.2.0003</li>
+          <li>7.5.1.0000</li>
+        </ul></div>
+      </div>
 </div>
 <div class="stats col-md-6">
   <center><h2>statistics</h2><center>
   <canvas id="myChart"></canvas>
 </div>
 <div class="related_documents col-md-12">
-  <div class="panel panel-danger">
+  <div class="panel panel-warning">
   <div class="panel-heading">Related Documents</div>
   <table class="table">
     <thead> <tr> <th>Name</th> <th>Size</th> <th>Type</th> <th>Date</th> <th>Modified</th><th>Author</th> </tr> </thead>
