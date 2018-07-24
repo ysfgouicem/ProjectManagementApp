@@ -67,6 +67,7 @@ div.container a.brand {
    color: red ;
    text-align : center ;
  }
+
  .lifecycle {
    width: 100% ;
    /*background-color: grey ;*/
@@ -95,8 +96,10 @@ div.container a.brand {
   margin-top :10px ;
   padding : 20px ;
 }
-.latest_problems {
-  background-color:red ;
+.latest_journal_entries {
   padding: 20px ;
+  margin-top: 10px ;
+}
+.related_documents{ 
   margin-top: 10px ;
 }
