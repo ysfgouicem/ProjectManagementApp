@@ -52,8 +52,10 @@ div.container a.brand {
   border-radius: 3px;
   border: none;
  }
+
  .project_type_active {
    color : green ;
+   font:
  }
  .project_type_closed {
    color : red  ;
@@ -61,3 +63,40 @@ div.container a.brand {
  .project_type_hold {
    color : grey ;
  }
+ .project_name{
+   color: red ;
+   text-align : center ;
+ }
+ .lifecycle {
+   width: 100% ;
+   /*background-color: grey ;*/
+   height :  100%;
+   margin-top: 10px ;
+   margin-bottom: 10px ;
+   padding : 20px ;
+ }
+ .status{
+   background-color:  red ;
+   opacity: 0.5;
+   padding: 20px ;
+ }
+.list_people{
+  background: green ;
+  padding: 20px ;
+}
+.latest_changes {
+
+  background-color: blue;
+  margin-top: 10px ;
+  padding: 20px;
+}
+.stats {
+  background-color: black;
+  margin-top :10px ;
+  padding : 20px ;
+}
+.latest_problems {
+  background-color:red ;
+  padding: 20px ;
+  margin-top: 10px ;
+}

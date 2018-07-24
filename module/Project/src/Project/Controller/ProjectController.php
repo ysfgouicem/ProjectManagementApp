@@ -23,7 +23,7 @@ namespace Project\Controller;
      }
 
      public function showAction()
-     {
+     {  // getting the variable from the url 
        $paramName = $this->getEvent()->getRouteMatch()->getParam('name');
        return new ViewModel (
          array(

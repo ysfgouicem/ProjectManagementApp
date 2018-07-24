@@ -34,11 +34,10 @@
  </tr>
  <?php foreach ($ClosedProjects as $ClosedProject) : ?>
  <tr>
-     <td><a href="<?=$this->url('Project', array('name' => $ClosefProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ClosedProject->name);?></a></td>
+     <td><a href="<?=$this->url('Project', array('name' => $ClosedProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ClosedProject->name);?></a></td>
      <td><?php echo $this->escapeHtml($ClosedProject->nature);?></td>
      <td><?php echo $this->escapeHtml($ClosedProject->description);?></td>
      <td><?php echo $this->escapeHtml($ClosedProject->status);?></td>
-
  </tr>
  <?php endforeach; ?>
  </table>

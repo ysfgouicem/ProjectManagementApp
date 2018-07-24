@@ -1,14 +1,68 @@
-<h2> showing this specific project </h2>
- <?php
+<div class="project_name"><h2><?php
  echo $this->escapeHtml($Project->name);
- ?><br>
- <?php
- echo $this->escapeHtml($Project->nature);
- ?><br>
- <?php
- echo $this->escapeHtml($Project->description);
- ?><br>
- <?php
- echo $this->escapeHtml($Project->status);
- ?><br>
- 
+ ?></h2></div>
+
+
+<div class="lifecycle col-md-12">
+<center>  <h2>  Lifecycle Space </h2> </center>
+  <div class="timeline" data-mode="horizontal" data-visible-items="3">
+   <div class="timeline__wrap">
+     <div class="timeline__items">
+       <div class="timeline__item">
+         <div class="timeline__content">
+          <b> specification </b> / description : Lorem ipsum dolor sit amet, an eos dico utinam placerat.
+            Te luptatum suscipiantur usu. Quot indoctum gubergren at quo, vel an possim insolens oportere.
+             Duo ad blandit percipitur, vim in epicurei incorrupte. <br>
+             <b>21/08/2018</b>
+         </div>
+       </div>
+       <div class="timeline__item">
+         <div class="timeline__content">
+          <b> Conception </b> / description : Lorem ipsum dolor sit amet, an eos dico utinam placerat.
+            Te luptatum suscipiantur usu. Quot indoctum gubergren at quo, vel an possim insolens oportere.
+             Duo ad blandit percipitur, vim in epicurei incorrupte. <br>
+             <b>27/08/2018</b>
+         </div>
+       </div>
+       <div class="timeline__item">
+         <div class="timeline__content">
+          <b> Integration QA </b> / description : Lorem ipsum dolor sit amet, an eos dico utinam placerat.
+            Te luptatum suscipiantur usu. Quot indoctum gubergren at quo, vel an possim insolens oportere.
+             Duo ad blandit percipitur, vim in epicurei incorrupte. <br>
+             <b>27/08/2018</b>
+         </div>
+       </div>
+
+       <div class="timeline__item">
+         <div class="timeline__content">
+          <b> Integration Certification </b> / description : Lorem ipsum dolor sit amet, an eos dico utinam placerat.
+            Te luptatum suscipiantur usu. Quot indoctum gubergren at quo, vel an possim insolens oportere.
+             Duo ad blandit percipitur, vim in epicurei incorrupte. <br>
+             <b>27/08/2018</b>
+         </div>
+       </div>
+       <div class="timeline__item">
+         <div class="timeline__content">
+           Your content / markup
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<div class="status col-md-4">
+  <h2 style="color: white"> current status </h2>
+</div>
+<div class="list_people col-md-8">
+<h2> list of people working on the project</h2>
+</div>
+<div class="latest_changes col-md-6">
+  <h2 style="color: white"> latest changes done on the project (current status)  </h2>
+</div>
+<div class="stats col-md-6">
+  <h2 style="color: white">stats space</h2>
+</div>
+<div class="latest_problems col-md-12">
+  <h2> latest list of problems</h2>
+</div>
