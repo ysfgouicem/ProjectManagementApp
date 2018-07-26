@@ -1,33 +1,76 @@
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/linedata-banner.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0.3;
+}
+
+header.masthead h1 {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+
+
+.icon-bar {
+    background-color: black;
+}
+a{
+  font-weight: 700;
+  color: black;
+}
+.menu_item{
+  font-weight: 700;
+  color: black;
+}
+.navbar-nav .menu_item a{
+  font-weight: 700;
+  color: black;
+}
+.navbar-nav .menu_item a:hover{
+  background-color: white;
+  border-top: 5px  black;
+  border-bottom: 1px ;
+}
+
 body {
   padding-top: 60px;
   padding-bottom: 40px;
+  font-family: Raleway ;
+  width: 100%;
 }
 
 .zf-red {
   color: red;
 }
 
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
-}
 
-.btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
-  background-color: #57a900;
-}
-
-.btn-success:active, .btn-success.active {
-  background-color: #57a900;
-}
-
-div.container a.brand {
-  background: url("../img/linedata-logo.png") no-repeat scroll 0 10px transparent;
+/*div.container a.brand {
+  background: url("../img/linedata-logo.png") no-repeat scroll 0 10px #000000;
   margin-left: 0;
   padding: 8px 20px 12px 40px;
 }
@@ -38,7 +81,7 @@ div.container a.brand {
   padding: 15px;
   margin: auto;
 }
-
+*/
 .pass {
   margin-top: 10px;
 }
@@ -52,7 +95,6 @@ div.container a.brand {
 
 .project_type_active {
   color: green;
-  font:
 }
 
 .project_type_closed {
@@ -67,7 +109,13 @@ div.container a.brand {
   color: red;
   text-align: center;
 }
-
+.section_title{
+  margin-bottom: 25px;
+  font-weight: 800;
+  font-size: 36px;
+  color: white ;
+  background-color: #DD0031;
+}
 .lifecycle {
   width: 100%;
   /*background-color: grey ;*/
@@ -76,7 +124,11 @@ div.container a.brand {
   margin-bottom: 10px;
   padding: 20px;
 }
-
+.timeline_date{
+  color:  red ;
+  font-family: Raleway ;
+  font-style: bold;
+}
 .status {
   padding: 20px;
   background: rgba(255,0,0,.5);
