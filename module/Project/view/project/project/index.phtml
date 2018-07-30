@@ -8,11 +8,10 @@
  <h3 class="project_type_active">Active Projects</h3>
  <table class="table">
  <tr>
-     <th>name</th>
+     <th>Partner</th>
      <th>nature</th>
      <th>description</th>
      <th>status</th>
-     <th>&nbsp;</th>
  </tr>
  <?php foreach ($ActiveProjects as $ActiveProject) : ?>
  <tr>
@@ -30,7 +29,6 @@
      <th>nature</th>
      <th>description</th>
      <th>status</th>
-     <th>&nbsp;</th>
  </tr>
  <?php foreach ($ClosedProjects as $ClosedProject) : ?>
  <tr>
@@ -48,7 +46,6 @@
       <th>nature</th>
       <th>description</th>
       <th>status</th>
-      <th>&nbsp;</th>
   </tr>
   <?php foreach ($OnholdProjects as $OnholdProject) : ?>
   <tr>
@@ -59,3 +56,14 @@
   </tr>
   <?php endforeach; ?>
   </table>
+
+  <?php foreach($user as $row){
+    echo "<b>";  print_r($row['name']); echo "</b>";
+    echo "</br>" ;
+    print_r($row['description']);
+    echo "</br>" ;
+    print_r($row['status']);echo "</br>" ;
+    print_r($row['global_status']);echo "</br>" ;
+    print_r($row['user_email']);echo "</br>" ;
+    echo "</br>" ;echo "</br>" ;
+}?>

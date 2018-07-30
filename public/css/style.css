@@ -1,41 +1,4 @@
 
-header.masthead {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/linedata-banner.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
-header.masthead .overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  opacity: 0.3;
-}
-
-header.masthead h1 {
-  font-size: 1rem;
-}
-
-@media (min-width: 768px) {
-  header.masthead {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-  }
-  header.masthead h1 {
-    font-size: 3rem;
-  }
-}
-
-
-
 .icon-bar {
     background-color: black;
 }
@@ -56,7 +19,6 @@ a{
   border-top: 5px  black;
   border-bottom: 1px ;
 }
-
 body {
   padding-top: 60px;
   padding-bottom: 40px;
@@ -109,6 +71,11 @@ body {
   color: red;
   text-align: center;
 }
+.project_status
+{
+  color: black;
+  margin-top: 10px;
+}
 .section_title{
   margin-bottom: 25px;
   font-weight: 800;
@@ -136,7 +103,7 @@ body {
   border-radius: 25px;
 }
 span.glyphicon-user {
-    font-size: 3.2em;
+    font-size: 1em;
 }
 .list_people {
   padding: 20px;

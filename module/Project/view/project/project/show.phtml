@@ -1,26 +1,6 @@
 <div class="project_name"><h2><?php
- echo $this->escapeHtml($Project->name)
- ?></h2></div>
-
- <!--<header class="masthead text-white text-center">
-       <div class="overlay"></div>
-       <div class="container">
-         <div class="row">
-           <div class="col-xl-9 mx-auto">
-             <h1 class="mb-5" style="color : white ; font-family: Raleway; font-weight:700;">We huminaze technology</h1>
-           </div>
-           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-             <form>
-               <div class="form-row">
-                 <div class="col-12 col-md-3">
-                   <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                 </div>
-               </div>
-             </form>
-           </div>
-         </div>
-       </div>
-     </header> -->
+ echo $this->escapeHtml($Project->name)?> <div class="project_status">
+  <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:black"></span>&nbsp :&nbsp <?php echo $this->escapeHtml($Project->status);?></div></h2></div>
 
 <div class="lifecycle col-md-12">
   <center>  <div class="section_title">Timeline Space </div> </center>
@@ -29,26 +9,25 @@
      <div class="timeline__items">
        <div class="timeline__item">
          <div class="timeline__content">
-          <b> specification </b>: Lorem ipsum dolor sit amet, vim in epicurei incorrupte. <br>
+          <b> specification </b>: Lorem ipsum dolor sit amet. <br>
              <b class="timeline_date">21/08/2018</b>
          </div>
        </div>
        <div class="timeline__item">
          <div class="timeline__content">
-          <b> Conception </b>: Lorem ipsum dolor sit ames, vim in epicurei incorrupte. <br>
+          <b> Conception </b>: Lorem ipsum dolor sit ames. <br>
              <b class="timeline_date">27/08/2018</b>
          </div>
        </div>
        <div class="timeline__item">
          <div class="timeline__content">
-          <b> Integration QA </b>: Lorem ipsum dolor sit amet, vim in epicurei incorrupte. <br>
+          <b> Integration QA </b>: Lorem ipsum dolor sit amet. <br>
              <b class="timeline_date">27/08/2018</b>
          </div>
        </div>
-
        <div class="timeline__item">
          <div class="timeline__content">
-          <b>Certification </b>Lorem ipsum dolor sit amet, vim in epicurei incorrupte. <br>
+          <b>Certification </b>Lorem ipsum dolor sit amet. <br>
              <b class="timeline_date">27/08/2018</b>
          </div>
        </div>
@@ -61,13 +40,6 @@
    </div>
  </div>
 </div>
-
-<!--<div class="status col-md-4">
-  <center>
-   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-  <h2> <?php// echo $this->escapeHtml($Project->status);?> </h2>
-</center>
-</div>  -->
 <div class="list_people col-md-12">
 <center><div class="section_title"> Teams</div></center>
 <ul class="nav nav-tabs">
@@ -166,7 +138,7 @@
 </div>
 <div class="related_documents col-md-12">
   <div class="panel panel-warning">
-  <div class="panel-heading" >Related Documents</div>
+  <div class="panel-heading">Related Documents</div>
   <table class="table">
     <thead> <tr> <th>Name</th> <th>Size</th> <th>Type</th> <th>Date</th> <th>Modified</th><th>Author</th> </tr> </thead>
     <tbody> <tr> <th scope="row">UBSoptaigo.png</th> <td>84.84 KB</td><td>PNG</td> <td>Tue, 06 Mar 2018 10:22:05</td> <td> Mon, 06 Aug 2018 10:22:05</td><td>Anastasia Allan</td> </tr>
@@ -181,11 +153,10 @@
   <div class="panel panel-info">
   <div class="panel-heading">Recent journal / comment </div>
   <table class="table">
-    <thead> <tr> <th>#</th> <th> Entery date</th> <th>Journal entry/comment</th> <th>links</th> </tr> </thead>
-    <tbody> <tr> <th scope="row">Lap-191</th> <td>Monday, December 31, 2018</td> <td>We are waiting for the client to give us permission</td> <td><a href="#">https://www.jira.com/?utm_source=ken&utm_medium=mail&utm_campaign=linedata</a></td> </tr>
-       <tr> <th scope="row">2045863</th>   <td>Friday, December 28, 2018</td> <td>Ready for release </td> <td><a href="#">https://www.ken.com/?utm_source=ken&utm_medium=mail&utm_campaign=linedata</a></td> </tr>
-          <tr> <th scope="row">22015678</th> <td>Friday, December 7, 2018 </td> <td>Test and failed in 75.0.2 build 37300</td> <td><a href="#">https://www.example.com/?utm_source=ken&utm_medium=mail&utm_campaign=linedata</a></td>
-           </tr>
+    <thead> <tr> <th>#</th> <th> Entery date</th> <th>Journal entry/comment</th> </tr> </thead>
+    <tbody> <tr> <th scope="row"> <a href="#"> Lap-191</a></th> <td>Monday, December 31, 2018</td> <td>We are waiting for the client to give us permission</td></tr>
+      <tr> <th scope="row"><a href="#"> 2045863</a></th>   <td>Friday, December 28, 2018</td> <td>Ready for release </td></tr>
+            <tr> <th scope="row"><a href="#">22015678</a></th> <td>Friday, December 7, 2018 </td> <td>Test and failed in 75.0.2 build 37300</td></tr>
             </tbody>
   </table>
 </div>

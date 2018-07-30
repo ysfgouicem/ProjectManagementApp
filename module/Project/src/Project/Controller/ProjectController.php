@@ -7,10 +7,11 @@ namespace Project\Controller;
  class ProjectController extends AbstractActionController
  {
     protected $ProjectTable;
-
+    
      public function indexAction()
      {
        return new ViewModel(array(
+          'user' => $this->getProjectTable()->userfetch(),
             'Projects' => $this->getProjectTable()->fetchAll(),
             'ClosedProjects' => $this->getProjectTable()->fetchProjects("closed"),
             'ActiveProjects' => $this->getProjectTable()->fetchProjects("active"),
@@ -22,9 +23,10 @@ namespace Project\Controller;
      {
      }
 
+
      public function showAction()
-     {  // getting the variable from the url
-       $paramName = $this->getEvent()->getRouteMatch()->getParam('name');
+     {
+       $paramName = $this->getEvent()->getRouteMatch()->getParam('name');  // getting the name fmro the url
        return new ViewModel (
          array(
               'Project' => $this->getProjectTable()->getProject($paramName),

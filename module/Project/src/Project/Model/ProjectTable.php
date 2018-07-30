@@ -3,33 +3,48 @@ namespace Project\Model;
 
  use Zend\Db\TableGateway\TableGateway;
  use Zend\Db\Adapter\Adapter ;
-
+ use Zend\Db\Sql\Select;
+ use Zend\Db\Sql\Sql;
  class ProjectTable
  {
      protected $tableGateway;
-/*     $adapter = new Zend\Db\Adapter\Adapter(array(
-    'driver' => 'Mysqli',
-    'database' => 'auth',
-    'username' => 'root',
-    'password' => ''
- ));*/
-
+     protected $select;
+        /* constructor  of the TableGateway   */
      public function __construct(TableGateway $tableGateway)
      {
          $this->tableGateway = $tableGateway;
+          $this->select = new Select();
      }
+     /* method using join between project and user   */
+     public function   userfetch() {
+       $sqlSelect = $this->tableGateway->getSql()->select();
+       $sqlSelect->columns(array('name','nature','description','status','global_status'));
+       $sqlSelect->join('user', 'user.id = project.project_leader', array('user_email'), 'left');
+
+/* --------------------------------------------------  use below fo multiple join ------------------------------------------
+
+                $select = $db->select();
+$select->from(array('p' => 'person'), array('person_id', 'name', 'dob'))
+       ->join(array('pa' => 'Person_Address'), 'pa.person_id = p.person_id', array())
+       ->join(array('a' => 'Address'), 'a.address_id = pa.address_id', array('address_id', 'street', 'city', 'state', 'country'));
+       */
+
+      $statement = $this->tableGateway->getSql()->prepareStatementForSqlObject($sqlSelect);
+       $resultSet = $statement->execute();
+       return $resultSet;
+      }
      /* method to get all table rows */
      public function fetchAll()
-     {
-         $resultSet = $this->tableGateway->select();
+     {    $resultSet = $this->tableGateway->select();
          return $resultSet;
      }
-      /* method to get project(s) with a specific global_status */
+      /* method to get  project(s) with a specific global_status */
      public function fetchProjects($global_status)
      {
          $resultSet = $this->tableGateway->select(array('global_status' => $global_status));
          return $resultSet;
      }
+
      /* method to get a project by it's name */
      public function getProject($name)
      {
@@ -41,32 +56,4 @@ namespace Project\Model;
          }
          return $row;
      }
-
-/*     public function saveProject(Project $project)
-     {
-         $data = array(
-             'name' => $project->name,
-             'nature'  => $project->nature,
-             'status'  => $project->status,
-             'description'  => $project->description,
-             'global_status'  => $project->global_status,
-             'project_leader'  => $project->project_leader,
-         );
-
-         $name = (int) $project->name;
-         if ($id == 0) {
-             $this->tableGateway->insert($data);
-         } else {
-             if ($this->getAlbum($id)) {
-                 $this->tableGateway->update($data, array('id' => $id));
-             } else {
-                 throw new \Exception('Album id does not exist');
-             }
-         }
-     }*/
-
-  /*  public function deleteProject($name)
-     {
-         $this->tableGateway->delete(array('name' => (string) $name));
-     }*/
  }
