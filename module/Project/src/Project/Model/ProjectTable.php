@@ -22,7 +22,6 @@ namespace Project\Model;
        $sqlSelect->join('user', 'user.id = project.project_leader', array('user_email'), 'left');
 
 /* --------------------------------------------------  use below fo multiple join ------------------------------------------
-
                 $select = $db->select();
 $select->from(array('p' => 'person'), array('person_id', 'name', 'dob'))
        ->join(array('pa' => 'Person_Address'), 'pa.person_id = p.person_id', array())
@@ -44,7 +43,6 @@ $select->from(array('p' => 'person'), array('person_id', 'name', 'dob'))
          $resultSet = $this->tableGateway->select(array('global_status' => $global_status));
          return $resultSet;
      }
-
      /* method to get a project by it's name */
      public function getProject($name)
      {

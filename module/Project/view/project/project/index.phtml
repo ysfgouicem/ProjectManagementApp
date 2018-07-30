@@ -1,5 +1,4 @@
 <?php
- // module/Album/view/album/album/index.phtml:
 
  $title = 'My projects';
  $this->headTitle($title);
@@ -67,3 +66,7 @@
     print_r($row['user_email']);echo "</br>" ;
     echo "</br>" ;echo "</br>" ;
 }?>
+
+<?php  foreach ($Spreadsheet as $ts) : ?>
+  <?php echo "<script>console.log('" . json_encode($ts) . "');</script>"; ?>
+<?php endforeach; ?>

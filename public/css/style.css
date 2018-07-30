@@ -6,18 +6,13 @@ a{
   font-weight: 700;
   color: black;
 }
-.menu_item{
-  font-weight: 700;
-  color: black;
-}
 .navbar-nav .menu_item a{
   font-weight: 700;
   color: black;
 }
 .navbar-nav .menu_item a:hover{
   background-color: white;
-  border-top: 5px  black;
-  border-bottom: 1px ;
+  color : red ;
 }
 body {
   padding-top: 60px;
@@ -30,19 +25,12 @@ body {
   color: red;
 }
 
-
 /*div.container a.brand {
   background: url("../img/linedata-logo.png") no-repeat scroll 0 10px #000000;
   margin-left: 0;
   padding: 8px 20px 12px 40px;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 430px;
-  padding: 15px;
-  margin: auto;
-}
 */
 .pass {
   margin-top: 10px;
@@ -66,7 +54,44 @@ body {
 .project_type_hold {
   color: grey;
 }
-
+/*---------------------------show project -------------------------*/
+.thumbnail {
+    position: relative;
+}
+/*------ text on top image not responsive --------------------*/
+.caption {
+    position: absolute;
+    top: 13%;
+    right: 5%;
+    width: 50%;
+    font-weight: 800;
+    font-size: 50px;
+}
+.caption p{
+  color: white;
+}
+.caption a{
+  text-align:  center;
+  display: block;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-style: solid;
+  border-radius: 25px;
+  border-color:  white;
+ padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 50%;
+  margin-top: 5px;
+}
+.caption a:hover{
+  background-color: white;
+  color: #DD0031;
+  text-decoration: none;
+  transition: 0.7s;
+}
 .project_name {
   color: red;
   text-align: center;
