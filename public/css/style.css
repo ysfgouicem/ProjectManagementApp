@@ -43,8 +43,40 @@ body {
   border: none;
 }
 
+#dropdown-content-time {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover #dropdown-content-time {display: block;}
 .project_type_active {
   color: green;
+}
+.timezone {
+  padding-left: 10px;
+  text-decoration: none;
+}
+.tunis-clock{
+  padding-left: 10px;
+  text-align:center;
+}
+.paris-clock{
+  padding-left: 10px;text-align:center;
+}
+.boston-clock{
+  padding-left: 10px;text-align:center;
+}
+.london-clock{
+  padding-left: 10px;text-align:center;
+}
+.hongkong-clock{
+  padding-left: 10px;text-align:center;
+}
+.riga-clock{
+  padding-left: 10px;text-align:center;
 }
 
 .project_type_closed {

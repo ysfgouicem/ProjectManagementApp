@@ -25,11 +25,13 @@
             ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
-                  <!-- Scripts for statistics and Raleway font -->
+                  <!-- Scripts for statistics ,Raleway font and dataTables  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800" rel="stylesheet">
+
     </head>
     <body>
+      <?php $project_name = "ok"; ?>
         <nav class="navbar" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -44,8 +46,20 @@
                     <ul class="nav navbar-nav pull-right">
                         <li class="menu_item"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                           <li class="menu_item"><a href="<?php echo $this->url('user') ?>"><?php echo $this->translate('Login') ?></a></li>
-                            <li class="menu_item"><a href="<?php echo $this->url('user_logout') ?>"><?php echo $this->translate('Logout') ?></a></li>
-                            <li class="menu_item"><a href=#><div class="clock"></div></a></li>
+                            <li class="menu_item"><a href="<?php echo $this->url('user_logout') ?>"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                         <li class="menu_item dropdown"><a href=# class="dropbtn"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></a>
+                            <div id="dropdown-content-time" class="dropdown-content-time">
+                           <a href="#" class="timezone">Tunis </a><div class="tunis-clock"></div><br>
+                             <a href="#" class="timezone">Boston</a> <div class="boston-clock"></div> <br>
+                             <a href="#" class="timezone">London</a> <div class="london-clock"></div><br>
+                             <a href="#" class="timezone" >Paris</a> <div class="paris-clock"></div><br>
+                             <a href="#" class="timezone" >Riga</a> <div class="riga-clock"></div><br>
+                             <a href="#" class="timezone" >Hong Kong</a> <div class="hongkong-clock"></div>
+                           </div>
+
+                         </li>
+
+                          </div>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -64,13 +78,39 @@
         </script>
         <script type="text/javascript">
 
-        //--------------------------------- clock script------------------------------------------
+        //--------------------------------- clock script (need a redo !!!!)------------------------------------------
         function clock() {
-          var time = new Date(),
-        hours = time.getHours(),
-        minutes = time.getMinutes(),
-        seconds = time.getSeconds();
-        document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+          var tunis_time = new Date() ; tunis_time.setUTCHours(15);
+          var boston_time = new Date(); boston_time.setUTCHours(10);
+          var paris_time = new Date();  paris_time.setUTCHours(16);
+          var london_time = new Date();  london_time.setUTCHours(15);
+          var riga_time = new Date();  riga_time.setUTCHours(15);
+          var hongkong_time = new Date();  hongkong_time.setUTCHours(22);
+        tnhours = tunis_time.getUTCHours(),
+        tnminutes =  tunis_time.getUTCMinutes(),
+        tnseconds = tunis_time.getUTCSeconds();
+        bshours = boston_time.getUTCHours(),
+        bsminutes =  boston_time.getUTCMinutes(),
+        bsseconds = boston_time.getUTCSeconds();
+        pahours = paris_time.getUTCHours(),
+        paminutes =  paris_time.getUTCMinutes(),
+        paseconds = paris_time.getUTCSeconds();
+        lonhours = london_time.getUTCHours(),
+        lonminutes =  london_time.getUTCMinutes(),
+        lonseconds = london_time.getUTCSeconds();
+        rigahours = riga_time.getUTCHours(),
+        rigaminutes =  riga_time.getUTCMinutes(),
+        rigaseconds = riga_time.getUTCSeconds();
+        hkhours = hongkong_time.getUTCHours(),
+        hkminutes =  hongkong_time.getUTCMinutes(),
+    //    hkseconds = hongkong_time.getUTCSeconds();
+        document.querySelectorAll('.tunis-clock')[0].innerHTML  = harold(tnhours) + ":" + harold(tnminutes) + ":" + harold(tnseconds);
+        document.querySelectorAll('.boston-clock')[0].innerHTML  = harold(bshours) + ":" + harold(bsminutes) + ":" + harold(bsseconds);
+        document.querySelectorAll('.riga-clock')[0].innerHTML  = harold(rigahours) + ":" + harold(rigaminutes) + ":" + harold(rigaseconds);
+        document.querySelectorAll('.paris-clock')[0].innerHTML  = harold(pahours) + ":" + harold(paminutes) + ":" + harold(paseconds);
+        document.querySelectorAll('.hongkong-clock')[0].innerHTML  = harold(hkhours) + ":" + harold(hkminutes) + ":" /*+ harold(hkseconds)*/;
+        document.querySelectorAll('.london-clock')[0].innerHTML  = harold(lonhours) + ":" + harold(lonminutes) + ":" + harold(lonseconds);
+
         function harold(standIn) {
           if (standIn < 10) {
             standIn = '0' + standIn

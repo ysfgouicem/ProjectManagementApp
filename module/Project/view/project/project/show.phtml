@@ -1,12 +1,13 @@
 <!--<div class="project_name"><h2><?php
- echo $this->escapeHtml($Project->name)?> <div class="project_status">
+
+ //echo $this->escapeHtml($Project->name)?> <div class="project_status">
   <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:black"></span>&nbsp :&nbsp <?php echo $this->escapeHtml($Project->status);?></div></h2></div>
 -->
 <div class="row" id="banner">
     <div class="thumbnail text-center">
         <img src="<?php echo $this->basePath('img/linedata-banner.jpg') ?>" alt=" linedata banner" class="img-responsive">
         <div class="caption">
-            <p>We humanize technology</p>
+            <p> <?php echo  $this->escapeHtml($Project->name) ?> - <?php echo  $this->escapeHtml($Project->status) ?>  </p>
             <center>
             <a href="<?php echo $this->url('Project') ?>">All Projects</a>
             <a href="https://www.linedata.com">My Linedata View</a>
@@ -66,10 +67,10 @@
   <div id="sales" class="tab-pane fade in active">
     <h3>Sales Team</h3>
     <table class="table">
-      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th> <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td>
              </tr>
               </tbody>
     </table>
@@ -77,10 +78,10 @@
   <div id="dev" class="tab-pane fade">
     <h3>Dev Team</h3>
     <table class="table">
-      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>   <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Sales Strategy</td>
              </tr>
               </tbody>
     </table>
@@ -88,10 +89,10 @@
   <div id="test" class="tab-pane fade">
     <h3>Test Team</h3>
     <table class="table">
-      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Patsy Mata</th> <td>Patsy_Mata@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Manager</td>
+      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Patsy Mata</th>  <td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th>    <td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th> <td>Manager</td>
              </tr>
               </tbody>
     </table>
@@ -99,12 +100,12 @@
   <div id="certif" class="tab-pane fade">
     <h3>Certification Team</h3>
     <table class="table">
-      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th><td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td>
              </tr>
-             <tr> <th scope="row">Eduard Sanford</th> <td>Eduard Sanford@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+             <tr> <th scope="row">Eduard Sanford</th><td>Sales Strategy</td>
               </tr>
               </tbody>
     </table>
@@ -112,14 +113,14 @@
   <div id="release" class="tab-pane fade">
     <h3>Release Team</h3>
     <table class="table">
-      <thead> <tr> <th>name</th> <th>mail</th> <th>Region</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th> <td>Rhodri_Searle@linedata.com</td> <td>Asia</td> <td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th>   <td>Farhana_Chapman@linedata.com</td> <td>Africa </td> <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Jakob_Mills@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
+      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
+         <tr> <th scope="row">Farhana Chapman</th><td>Data Manager</td> </tr>
+            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td>
              </tr>
-             <tr> <th scope="row">Cairo Haynes</th> <td>Cairo_Haynes@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+             <tr> <th scope="row">Cairo Haynes</th><td>Sales Strategy</td>
               </tr>
-              <tr> <th scope="row">Arandeep Salas</th> <td>Arandeep_Salas@linedata.com </td> <td>North America</td> <td>Sales Strategy</td>
+              <tr> <th scope="row">Arandeep Salas</th> <td>Sales Strategy</td>
                </tr>
               </tbody>
     </table>
