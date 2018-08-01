@@ -25,13 +25,6 @@ body {
   color: red;
 }
 
-/*div.container a.brand {
-  background: url("../img/linedata-logo.png") no-repeat scroll 0 10px #000000;
-  margin-left: 0;
-  padding: 8px 20px 12px 40px;
-}
-
-*/
 .pass {
   margin-top: 10px;
 }
@@ -42,6 +35,7 @@ body {
   border-radius: 3px;
   border: none;
 }
+                /*--------------------------------------------- clocks in the navbar --------------------------------------------------*/
 
 #dropdown-content-time {
     display: none;
@@ -52,43 +46,23 @@ body {
     z-index: 1;
 }
 .dropdown:hover #dropdown-content-time {display: block;}
-.project_type_title {
-  font-size: 35px;
-  font-weight: bold;
-  margin : 10px;
-  text-align: center;
-  padding :5px;
-  background-color: #dd0031;
-  color: white;
-}
+
 .timezone {
   padding-left: 10px;
   text-decoration: none;
 }
+
 .tunis-clock{
   padding-left: 10px;
   text-align:center;
-}
-.paris-clock{
-  padding-left: 10px;text-align:center;
-}
-.boston-clock{
-  padding-left: 10px;text-align:center;
-}
-.london-clock{
-  padding-left: 10px;text-align:center;
-}
-.hongkong-clock{
-  padding-left: 10px;text-align:center;
-}
-.riga-clock{
-  padding-left: 10px;text-align:center;
 }
 
 /*---------------------------show project -------------------------*/
 .thumbnail {
     position: relative;
 }
+                        /*------------------------------- banner in project view ------------------------------*/
+
 /*------ text on top image not responsive --------------------*/
 .caption {
     position: absolute;
@@ -123,17 +97,16 @@ body {
   text-decoration: none;
   transition: 0.7s;
 }
-.project_name {
-  color: red;
+.project_type_title {
+  font-size: 35px;
+  font-weight: bold;
+  margin : 10px;
   text-align: center;
+  padding :5px;
+  background-color: #dd0031;
+  color: white;
 }
-.project_status
-{
-  color: black;
-  margin-top: 10px;
-}
-
-              /*----------------------------------------------popup css ------------------------------------------*/
+                      /*----------------------------------------------popup css ------------------------------------------*/
 .popup .popuptext {
     visibility: hidden;
     min-width: 100px;
@@ -166,7 +139,6 @@ body {
     -webkit-animation: fadeIn 1.5s;
     animation: fadeIn 1.5s
 }
-
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
     from {opacity: 0;}
@@ -177,7 +149,15 @@ body {
     to {opacity:1 ;}
 }
 
-
+.table_header_active{
+  background-color:rgba(106, 176, 76,0.5);
+}
+.table_header_closed{
+  background-color: rgba(255, 121, 121,0.5);
+}
+.table_header_onhold{
+  background-color: rgba(83, 92, 104,0.5);
+}
 .section_title{
   margin-bottom: 25px;
   font-weight: 800;
