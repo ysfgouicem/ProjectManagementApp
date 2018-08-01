@@ -15,7 +15,8 @@
                         ->prependStylesheet($this->basePath() . '/css/style.css')
                         ->prependStylesheet($this->basePath() . '/css/timeline.css')
                         ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                         ?>
 
         <!-- Scripts -->
         <?php echo $this->headScript()
@@ -28,7 +29,8 @@
                   <!-- Scripts for statistics ,Raleway font and dataTables  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.18/r-2.2.2/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     </head>
     <body>
       <?php $project_name = "ok"; ?>
@@ -70,9 +72,11 @@
             <footer>
             </footer>
         </div> <!-- /container -->
-                  <!-- Script for the initiation of the Timeline -->
+                  <!-- Script for the dataTables-->
         <script type="text/javascript">
-
+        $(document).ready( function () {
+    $('table.proj').DataTable();
+} );
         //--------------------------------- timeline script------------------------------------------
         timeline(document.querySelectorAll('.timeline'));
         </script>

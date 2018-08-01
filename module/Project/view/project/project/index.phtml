@@ -15,31 +15,42 @@
      </div>
  </div>
  <h3 class="project_type_active">Active Projects</h3>
- <table id="active_project"class="table">
+
+ <!--     actve project  ---------->
+ <table id="active_project"class=" proj table">
+   <thead>
  <tr>
      <th>Partner</th>
      <th>nature</th>
      <th>description</th>
      <th>status</th>
  </tr>
+  </thead>
+  <tbody>
  <?php foreach ($ActiveProjects as $ActiveProject) : ?>
- <tr>
+   <tr>
      <td><a href="<?=$this->url('Project', array('name' => $ActiveProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ActiveProject->name);?></a></td>
      <td><?php echo $this->escapeHtml($ActiveProject->nature);?></td>
      <td><?php echo $this->escapeHtml($ActiveProject->description);?></td>
      <td><?php echo $this->escapeHtml($ActiveProject->status);?></td>
  </tr>
  <?php endforeach; ?>
+</tbody>
  </table>
+
+ <!--     closed project  ---------->
 <h3 class="project_type_closed">Closed Projects</h3>
- <table  id="closed_project" class="table">
- <tr>
+ <table  id="closed_project" class="proj table">
+<thead>
+<tr>
      <th>name</th>
      <th>nature</th>
      <th>description</th>
      <th>status</th>
  </tr>
- <?php foreach ($ClosedProjects as $ClosedProject) : ?>
+</thead>
+<tbody>
+  <?php foreach ($ClosedProjects as $ClosedProject) : ?>
  <tr>
      <td><a href="<?=$this->url('Project', array('name' => $ClosedProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ClosedProject->name);?></a></td>
      <td><?php echo $this->escapeHtml($ClosedProject->nature);?></td>
@@ -47,23 +58,32 @@
      <td><?php echo $this->escapeHtml($ClosedProject->status);?></td>
  </tr>
  <?php endforeach; ?>
+ </tbody>
  </table>
+
+<!--     onhold project  ---------->
  <h3 class="project_type_hold">On hold Projects</h3>
-  <table id="onhold_project" class="table">
-  <tr>
+
+  <table id="onhold_project" class=" proj table">
+    <thead>
+        <tr>
       <th>name</th>
       <th>nature</th>
       <th>description</th>
       <th>status</th>
-  </tr>
+        </tr>
+      </thead>
+
+<tbody>
   <?php foreach ($OnholdProjects as $OnholdProject) : ?>
-  <tr>
+        <tr>
       <td><a href="<?=$this->url('Project', array('name' => $OnholdProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($OnholdProject->name);?></a></td>
       <td><?php echo $this->escapeHtml($OnholdProject->nature);?></td>
       <td><?php echo $this->escapeHtml($OnholdProject->description);?></td>
       <td><?php echo $this->escapeHtml($OnholdProject->status);?></td>
-  </tr>
+        </tr>
   <?php endforeach; ?>
+    </tbody>
   </table>
 
   <?php /* -------------------------------------------how to display array object ---------------------------------

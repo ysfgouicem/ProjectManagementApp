@@ -29,7 +29,7 @@ namespace Project\Controller;
 
      public function showAction()
      {
-       $paramName = $this->getEvent()->getRouteMatch()->getParam('name');  // getting the name fmro the url
+       $paramName = $this->getEvent()->getRouteMatch()->getParam('name');  // getting the name from the url
        return new ViewModel (
          array(
               'Project' => $this->getProjectTable()->getProject($paramName),
