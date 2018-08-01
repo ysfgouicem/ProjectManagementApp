@@ -69,14 +69,12 @@
         <div class="container">
             <?php echo $this->content; ?>
             <hr>
-            <footer>
-            </footer>
         </div> <!-- /container -->
                   <!-- Script for the dataTables-->
         <script type="text/javascript">
-        $(document).ready( function () {
-    $('table.proj').DataTable();
-} );
+              $(document).ready( function () {
+          $('table.proj').DataTable();
+              } );
         //--------------------------------- popup script -------------------------------------------
                 function PopupFunction() {
             var popup = document.getElementById("myPopup");
@@ -85,8 +83,8 @@
         //--------------------------------- timeline script------------------------------------------
         timeline(document.querySelectorAll('.timeline'));
         </script>
-        <script type="text/javascript">
 
+        <script type="text/javascript">
         //--------------------------------- clock script (need to convert to other timezones)------------------------------------------
         function clock() {
           var tunis_time = new Date() ;
@@ -102,6 +100,7 @@
           }
         }
         setInterval(clock, 1000);
+
         </script>
         <?php echo $this->inlineScript() ?>
     </body>
