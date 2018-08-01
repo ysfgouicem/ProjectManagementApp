@@ -77,44 +77,23 @@
         $(document).ready( function () {
     $('table.proj').DataTable();
 } );
+        //--------------------------------- popup script -------------------------------------------
+                function PopupFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
         //--------------------------------- timeline script------------------------------------------
         timeline(document.querySelectorAll('.timeline'));
         </script>
         <script type="text/javascript">
 
-        //--------------------------------- clock script (need a redo !!!!)------------------------------------------
+        //--------------------------------- clock script (need to convert to other timezones)------------------------------------------
         function clock() {
-          var tunis_time = new Date() ; tunis_time.setUTCHours(15);
-          var boston_time = new Date(); boston_time.setUTCHours(10);
-          var paris_time = new Date();  paris_time.setUTCHours(16);
-          var london_time = new Date();  london_time.setUTCHours(15);
-          var riga_time = new Date();  riga_time.setUTCHours(15);
-          var hongkong_time = new Date();  hongkong_time.setUTCHours(22);
-        tnhours = tunis_time.getUTCHours(),
-        tnminutes =  tunis_time.getUTCMinutes(),
-        tnseconds = tunis_time.getUTCSeconds();
-        bshours = boston_time.getUTCHours(),
-        bsminutes =  boston_time.getUTCMinutes(),
-        bsseconds = boston_time.getUTCSeconds();
-        pahours = paris_time.getUTCHours(),
-        paminutes =  paris_time.getUTCMinutes(),
-        paseconds = paris_time.getUTCSeconds();
-        lonhours = london_time.getUTCHours(),
-        lonminutes =  london_time.getUTCMinutes(),
-        lonseconds = london_time.getUTCSeconds();
-        rigahours = riga_time.getUTCHours(),
-        rigaminutes =  riga_time.getUTCMinutes(),
-        rigaseconds = riga_time.getUTCSeconds();
-        hkhours = hongkong_time.getUTCHours(),
-        hkminutes =  hongkong_time.getUTCMinutes(),
-    //    hkseconds = hongkong_time.getUTCSeconds();
-        document.querySelectorAll('.tunis-clock')[0].innerHTML  = harold(tnhours) + ":" + harold(tnminutes) + ":" + harold(tnseconds);
-        document.querySelectorAll('.boston-clock')[0].innerHTML  = harold(bshours) + ":" + harold(bsminutes) + ":" + harold(bsseconds);
-        document.querySelectorAll('.riga-clock')[0].innerHTML  = harold(rigahours) + ":" + harold(rigaminutes) + ":" + harold(rigaseconds);
-        document.querySelectorAll('.paris-clock')[0].innerHTML  = harold(pahours) + ":" + harold(paminutes) + ":" + harold(paseconds);
-        document.querySelectorAll('.hongkong-clock')[0].innerHTML  = harold(hkhours) + ":" + harold(hkminutes) + ":" /*+ harold(hkseconds)*/;
-        document.querySelectorAll('.london-clock')[0].innerHTML  = harold(lonhours) + ":" + harold(lonminutes) + ":" + harold(lonseconds);
-
+          var tunis_time = new Date() ;
+        tnh = tunis_time.getHours(),
+        tnm =  tunis_time.getMinutes(),
+        tns = tunis_time.getSeconds();
+        document.querySelectorAll('.tunis-clock')[0].innerHTML  = harold(tnh) + ":" + harold(tnm) + ":" + harold(tns);
         function harold(standIn) {
           if (standIn < 10) {
             standIn = '0' + standIn

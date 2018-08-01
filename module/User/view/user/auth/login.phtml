@@ -4,6 +4,7 @@
  $title = 'Login';
  $this->headTitle($title);
 $form->setAttribute('action', '');
+echo   '<center>';
 $form->prepare();
 echo $this->form()->openTag($form);
 echo '<table class="form-signin">';
@@ -22,4 +23,5 @@ echo '<tr>';
 echo '<td></td><td>'.$this->formRow($form->get('submit')).'</td>';
 echo '</tr>';
 echo $this->form()->closeTag();
+echo   '</center>';
 ?>

@@ -52,8 +52,14 @@ body {
     z-index: 1;
 }
 .dropdown:hover #dropdown-content-time {display: block;}
-.project_type_active {
-  color: green;
+.project_type_title {
+  font-size: 35px;
+  font-weight: bold;
+  margin : 10px;
+  text-align: center;
+  padding :5px;
+  background-color: #dd0031;
+  color: white;
 }
 .timezone {
   padding-left: 10px;
@@ -79,13 +85,6 @@ body {
   padding-left: 10px;text-align:center;
 }
 
-.project_type_closed {
-  color: red;
-}
-
-.project_type_hold {
-  color: grey;
-}
 /*---------------------------show project -------------------------*/
 .thumbnail {
     position: relative;
@@ -133,6 +132,52 @@ body {
   color: black;
   margin-top: 10px;
 }
+
+              /*----------------------------------------------popup css ------------------------------------------*/
+.popup .popuptext {
+    visibility: hidden;
+    min-width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position:absolute;
+    z-index: 1;
+    bottom: 70%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 16px;
+}
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1.5s;
+    animation: fadeIn 1.5s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
 .section_title{
   margin-bottom: 25px;
   font-weight: 800;
