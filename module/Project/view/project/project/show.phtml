@@ -2,7 +2,7 @@
     <div class="thumbnail text-center">
         <img src="<?php echo $this->basePath('img/linedata-banner.jpg') ?>" alt=" linedata banner" class="img-responsive">
         <div class="caption">
-            <p> <?php echo  $this->escapeHtml($Project->name) ?><div style="color:#DD0031" class="popup" onclick="PopupFunction()">
+            <p> <?php echo  $this->escapeHtml($Project->name) ?><div style="color:#DD0031;cursor:pointer" class="popup" onclick="PopupFunction()">
                    <?php /* echo  $this->escapeHtml($Project->status) */?> Certification <span class="popuptext" id="myPopup">Last change :
                       insert last change content here!!! </br><b> by ysf gouicem</b></span></div>  </p>
             <center>
@@ -122,6 +122,30 @@
   </div>
 </div>
 </div>
+<div class="issue_tracker col-md-12">
+  <center><div class="section_title"> Issues Tracker </div> </center>
+  <table id="issue_tracker" class="issue_tracker table">
+    <thead>
+  <tr class="table_header">
+      <th>Call Type</th>
+      <th> Open</th>
+      <th> In Dev </th>
+      <th> Testing</th>
+      <th> Closed</th>
+
+  </tr>
+   </thead>
+   <tbody>
+    <tr>
+      <td>womeg1</td>
+      <td>womeg2</td>
+      <td>womeg3</td>
+      <td>womeg4</td>
+      <td>womeg5</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
 <div class="latest_changes col-md-6">
 <center><div class="section_title"> Certifications </div> </center>
   <div class="panel panel-success">
@@ -141,7 +165,7 @@
       </div>
 </div>
 <div class="stats col-md-6">
-  <center><div class="section_title">statistics</div><center>
+  <center><div class="section_title">Statistics</div><center>
   <canvas id="myChart"></canvas>
 </div>
 <div class="related_documents col-md-12">
@@ -201,4 +225,60 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+</script>
+<script type="text/javascript">
+/* Formatting function for row details - modify as you need */
+function format ( d ) {
+  // `d` is the original data object for the row
+  return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+      '<tr>'+
+          '<td>Full name:</td>'+
+          '<td>'+d.name+'</td>'+
+      '</tr>'+
+      '<tr>'+
+          '<td>Extension number:</td>'+
+          '<td>'+d.extn+'</td>'+
+      '</tr>'+
+      '<tr>'+
+          '<td>Extra info:</td>'+
+          '<td>And any further details here (images etc)...</td>'+
+      '</tr>'+
+  '</table>';
+}
+
+$(document).ready(function() {
+    var table = $('#example').DataTable( {
+        "ajax": "../ajax/data/objects.txt",
+        "columns": [
+            {
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": ''
+            },
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "office" },
+            { "data": "salary" }
+        ],
+        "order": [[1, 'asc']]
+    } );
+
+    // Add event listener for opening and closing details
+    $('#issue_tracker tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row( tr );
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
+} );
 </script>

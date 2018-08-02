@@ -8,7 +8,7 @@ class Project
     public $description;
     public $status;
     public $global_status;
-    
+
     public function exchangeArray($data)
     {
         $this->name     = (!empty($data['name'])) ? $data['name'] : null;

@@ -16,10 +16,10 @@
  </div>
  <div class="project_type_title">Active Projects</div>
 
- <!--     actve project  ---------->
- <table id="active_project"class=" proj table">
+ <!--     active project  ---------->
+ <table id="active_project"class="proj table">
    <thead>
- <tr class="table_header_active">
+ <tr class="table_header">
      <th>Name</th>
      <th>Nature</th>
      <th>Description</th>
@@ -42,7 +42,7 @@
 <div class="project_type_title">Closed Projects</div>
  <table  id="closed_project" class="proj table">
 <thead>
-<tr class="table_header_closed">
+<tr class="table_header">
      <th>Name</th>
      <th>Nature</th>
      <th>Description</th>
@@ -66,7 +66,7 @@
 
   <table id="onhold_project" class=" proj table">
     <thead>
-        <tr class="table_header_onhold">
+        <tr class="table_header">
       <th>Name</th>
       <th>Nature</th>
       <th>Description</th>
@@ -97,3 +97,9 @@
     print_r($row['user_email']);echo "</br>" ;
     echo "</br>" ;echo "</br>" ;
 }*/?>
+<?php
+ foreach ($Project as $row){
+   echo "<b>";  print_r($row['global_status']); echo "</b>";
+   echo "</br>" ;
+ echo "</br>" ;
+}?>

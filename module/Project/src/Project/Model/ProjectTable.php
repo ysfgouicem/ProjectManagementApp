@@ -2,18 +2,18 @@
 namespace Project\Model;
 
  use Zend\Db\TableGateway\TableGateway;
- use Zend\Db\Adapter\Adapter ;
+ /*use Zend\Db\Adapter\Adapter ;
  use Zend\Db\Sql\Select;
- use Zend\Db\Sql\Sql;
+ use Zend\Db\Sql\Sql;*/
  class ProjectTable
  {
      protected $tableGateway;
-     protected $select;
+  //  protected $select;
         /* constructor  of the TableGateway   */
      public function __construct(TableGateway $tableGateway)
      {
          $this->tableGateway = $tableGateway;
-          $this->select = new Select();
+  //        $this->select = new Select();
      }
      /* method using join between project and user   */
      public function   userfetch() {
@@ -32,18 +32,26 @@ $select->from(array('p' => 'person'), array('person_id', 'name', 'dob'))
        $resultSet = $statement->execute();
        return $resultSet;
       }
-     /* method to get all table rows */
+
      public function fetchAll()
      {    $resultSet = $this->tableGateway->select();
-         return $resultSet;
+          return $resultSet;
      }
-      /* method to get  project(s) with a specific global_status */
+
+     public function womeguser(){
+    /*    $query="select * from user" ;
+       $statement = $this->tableGateway->getSql()->prepareStatementForSqlObject($query);
+        $resultSet = $statement->execute();
+        return $resultSet;*/
+     }
+
+
      public function fetchProjects($global_status)
      {
          $resultSet = $this->tableGateway->select(array('global_status' => $global_status));
          return $resultSet;
      }
-     /* method to get a project by it's name */
+
      public function getProject($name)
      {
          $name  = (string) $name;

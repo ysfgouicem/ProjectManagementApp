@@ -25,6 +25,7 @@ class Module
        );
     }
 
+
     public function getServiceConfig()
    {
        return array(
@@ -39,6 +40,11 @@ class Module
                    $resultSetPrototype = new ResultSet();
                    $resultSetPrototype->setArrayObjectPrototype(new Project());
                    return new TableGateway('Project', $dbAdapter, null, $resultSetPrototype);
+               },
+               'Project\Model\Connection' => function ($sm) {
+                   $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                     $table = new \Project\Model\Connection ('Project', $dbAdapter);
+                     return $table;
                },
            ),
        );
