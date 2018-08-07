@@ -22,8 +22,8 @@
  <tr class="table_header">
      <th>Name</th>
      <th>Nature</th>
-     <th>Description</th>
-     <th>Status</th>
+     <th>Brief Description</th>
+     <th>Project Leader</th>
  </tr>
   </thead>
   <tbody>
@@ -32,7 +32,7 @@
      <td><a href="<?=$this->url('Project', array('name' => $ActiveProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ActiveProject->name);?></a></td>
      <td><?php echo $this->escapeHtml($ActiveProject->nature);?></td>
      <td><?php echo $this->escapeHtml($ActiveProject->description);?></td>
-     <td><?php echo $this->escapeHtml($ActiveProject->status);?></td>
+     <td>John doe</td>
  </tr>
  <?php endforeach; ?>
 </tbody>
@@ -45,8 +45,8 @@
 <tr class="table_header">
      <th>Name</th>
      <th>Nature</th>
-     <th>Description</th>
-     <th>Status</th>
+     <th>Brief Description</th>
+     <th>Project Leader</th>
  </tr>
 </thead>
 <tbody>
@@ -55,37 +55,92 @@
      <td><a href="<?=$this->url('Project', array('name' => $ClosedProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ClosedProject->name);?></a></td>
      <td><?php echo $this->escapeHtml($ClosedProject->nature);?></td>
      <td><?php echo $this->escapeHtml($ClosedProject->description);?></td>
-     <td><?php echo $this->escapeHtml($ClosedProject->status);?></td>
+     <td>John doe</td>
  </tr>
  <?php endforeach; ?>
  </tbody>
  </table>
 
-<!--     onhold project  ---------->
- <div class="project_type_title">On hold Projects</div>
-
-  <table id="onhold_project" class=" proj table">
-    <thead>
-        <tr class="table_header">
-      <th>Name</th>
-      <th>Nature</th>
-      <th>Description</th>
-      <th>Status</th>
-        </tr>
-      </thead>
+  <!--   Released projects ---------->
+<div class="project_type_title">Released Projects</div>
+<table id="onhold_project" class=" proj table">
+  <thead>
+      <tr class="table_header">
+    <th>Name</th>
+    <th>Nature</th>
+    <th>Brief Description</th>
+    <th>Project Leader</th>
+      </tr>
+    </thead>
 
 <tbody>
-  <?php foreach ($OnholdProjects as $OnholdProject) : ?>
-        <tr>
-      <td><a href="<?=$this->url('Project', array('name' => $OnholdProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($OnholdProject->name);?></a></td>
-      <td><?php echo $this->escapeHtml($OnholdProject->nature);?></td>
-      <td><?php echo $this->escapeHtml($OnholdProject->description);?></td>
-      <td><?php echo $this->escapeHtml($OnholdProject->status);?></td>
-        </tr>
-  <?php endforeach; ?>
-    </tbody>
-  </table>
+<tr>
+   <td>Project 1 </td>
+<td>fix integration</td>
+<td>waiting for EMEA region</td>
+<td>John doe</td>
+</tr>
+<tr>
+   <td>Project 2 </td>
+<td>missing feature</td>
+<td>	this is a test description 5 regions</td>
+<td>John doe</td>
+</tr>
+  </tbody>
+</table>
+<!--   Proposed projects ---------->
+<div class="project_type_title">Proposed Projects</div>
+<table id="onhold_project" class=" proj table">
+  <thead>
+      <tr class="table_header">
+    <th>Name</th>
+    <th>Nature</th>
+    <th>Brief Description</th>
+    <th>Project Leader</th>
+      </tr>
+    </thead>
 
+<tbody>
+  <tr>
+     <td>Project 1 </td>
+  <td>fix integration</td>
+  <td>waiting for EMEA region</td>
+  <td>John doe</td>
+  </tr>
+  <tr>
+     <td>Project 2 </td>
+  <td>missing feature</td>
+  <td>	this is a test description 5 regions</td>
+  <td>John doe</td>
+  </tr>
+  </tbody>
+</table>
+<div class="project_type_title">Abandoned Projects</div>
+<table id="onhold_project" class=" proj table">
+  <thead>
+      <tr class="table_header">
+    <th>Name</th>
+    <th>Nature</th>
+    <th>Brief Description</th>
+    <th>Project Leader</th>
+      </tr>
+    </thead>
+
+<tbody>
+  <tr>
+     <td>Project 1 </td>
+  <td>fix integration</td>
+  <td>waiting for EMEA region</td>
+  <td>John doe</td>
+  </tr>
+  <tr>
+     <td>Project 2 </td>
+  <td>missing feature</td>
+  <td>	this is a test description 5 regions</td>
+  <td>John doe</td>
+  </tr>
+  </tbody>
+</table>
   <?php /* -------------------------------------------how to display array object ---------------------------------
   foreach($user as $row){
     echo "<b>";  print_r($row['name']); echo "</b>";

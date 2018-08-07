@@ -132,7 +132,6 @@
       <th> In Dev </th>
       <th> Testing</th>
       <th> Closed</th>
-
   </tr>
    </thead>
    <tbody>
@@ -169,7 +168,7 @@
   <canvas id="myChart"></canvas>
 </div>
 <div class="related_documents col-md-12">
-  <div class="panel panel-warning">
+  <div class="panel panel-default">
   <div class="panel-heading">Related Documents</div>
   <table class="table">
     <thead> <tr> <th>Name</th> <th>Size</th> <th>Type</th> <th>Date</th> <th>Modified</th><th>Author</th> </tr> </thead>
@@ -182,8 +181,8 @@
 </div>
 </div>
 <div class="latest_journal_entries col-md-12">
-  <div class="panel panel-info">
-  <div class="panel-heading">Recent journal / comment </div>
+  <div class="panel panel-default">
+  <div class="panel-heading"><b>Recent journal / comment </b></div>
   <table class="table">
     <thead> <tr> <th>#</th> <th> Entery date</th> <th>Journal entry/comment</th> </tr> </thead>
     <tbody> <tr> <th scope="row"> <a href="#"> Lap-191</a></th> <td>Monday, December 31, 2018</td> <td>We are waiting for the client to give us permission</td></tr>
@@ -200,20 +199,51 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ["US", "EMEA", "APAC"],
         datasets: [{
-            label: 'Status By Region',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Developement',
+            data: [100, 75, 60],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)'
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
+                'rgba(149, 165, 166,0.5)',
+                'rgba(149, 165, 166,0.5)',
+                'rgba(149, 165, 166,0.5)'
             ],
             borderWidth: 1
-        }]
+        },
+        {
+            label: 'Testing',
+            data: [60, 100, 70],
+            backgroundColor: [
+                'rgba(149, 165, 166,0.7)',
+                'rgba(149, 165, 166,0.7)',
+                'rgba(149, 165, 166,0.7)'
+            ],
+            borderColor: [
+                'rgba(149, 165, 166,0.5)',
+                'rgba(149, 165, 166,0.5)',
+                'rgba(149, 165, 166,0.5)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Certification',
+            data: [75, 70, 100],
+            backgroundColor: [
+                'rgba(183, 25, 40, 0.7)',
+                'rgba(183, 25, 40, 0.7)',
+                'rgba(183, 25, 40, 0.7)'
+            ],
+            borderColor: [
+                'rgba(149, 165, 166,0.5)',
+                'rgba(149, 165, 166,0.5)',
+                'rgba(149, 165, 166,0.5)'
+            ],
+            borderWidth: 1
+        }
+      ]
     },
     options: {
         scales: {

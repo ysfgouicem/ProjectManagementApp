@@ -105,6 +105,7 @@ body {
   padding :5px;
   background-color: #dd0031;
   color: white;
+  border-radius: 25px;
 }
                       /*----------------------------------------------popup css ------------------------------------------*/
 .popup .popuptext {
@@ -158,6 +159,8 @@ body {
   font-size: 36px;
   color: white ;
   background-color: #DD0031;
+  border-radius: 15px;
+
 }
 .lifecycle {
   width: 100%;
