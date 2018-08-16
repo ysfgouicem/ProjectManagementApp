@@ -11,12 +11,16 @@ namespace Project\Controller;
      public function indexAction()
      {
        return new ViewModel(array(
-          'user' => $this->getProjectTable()->userfetch(),
-            'Projects' => $this->getProjectTable()->fetchAll(),
+      /*    'user' => $this->getProjectTable()->userfetch(),
+      /*      'Projects' => $this->getProjectTable()->fetchAll(),
             'ClosedProjects' => $this->getProjectTable()->fetchProjects("closed"),
             'ActiveProjects' => $this->getProjectTable()->fetchProjects("active"),
-            'OnholdProjects' => $this->getProjectTable()->fetchProjects("on hold"),
-            'Project' => $this->getConnection()->fetch(),
+            'OnholdProjects' => $this->getProjectTable()->fetchProjects("on hold"),*/
+            'Project' => $this->getConnection()->fetchprojectbystatus('Active'),
+            'Project2' => $this->getConnection()->fetchprojectbystatus('Closed'),
+            'Project3' => $this->getConnection()->fetchprojectbystatus('Released'),
+            'Project4' => $this->getConnection()->fetchprojectbystatus('Proposed'),
+            'Project5' => $this->getConnection()->fetchprojectbystatus('Abandoned'),
         ));
      }
 
@@ -27,12 +31,13 @@ namespace Project\Controller;
 
      public function showAction()
      {
-       $paramName = $this->getEvent()->getRouteMatch()->getParam('name');  // getting the name from the url
+       $paramName = $this->getEvent()->getRouteMatch()->getParam('id');
        return new ViewModel (
          array(
-              'Project' => $this->getProjectTable()->getProject($paramName),
+              'Project' => $this->getConnection()->getProject($paramName),
          ));
      }
+
      public function getConnection()
          {
              if (!$this->Connection) {
@@ -41,6 +46,7 @@ namespace Project\Controller;
              }
              return $this->Connection;
          }
+
      public function getProjectTable()
      {
          if (!$this->ProjectTable) {
@@ -49,4 +55,28 @@ namespace Project\Controller;
          }
          return $this->ProjectTable;
      }
+
+     public function ajaxAction() {
+   $data =$this->getConnection()->fetchprojectbystatus('Active') ;
+   $request = $this->getRequest();
+   $query = $request->getQuery();
+   if ($request->isXmlHttpRequest() || $query->get('showJson') == 1) {
+      $jsonData = array();
+      $idx = 0;
+      foreach($data as $row) { 
+         $temp = array(
+            'id' => $row['project_id'],
+            'name' => $row['project_name'],
+            'nature' => $row['project_nature_en'],
+            'description' => $row['brief_description']
+         );
+         $jsonData[$idx++] = $temp;
+      }
+      $view = new JsonModel($jsonData);
+      $view->setTerminal(true);
+   } else {
+      $view = new ViewModel();
+   }
+   return $view;
+}
  }

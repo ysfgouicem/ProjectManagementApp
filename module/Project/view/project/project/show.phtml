@@ -2,9 +2,8 @@
     <div class="thumbnail text-center">
         <img src="<?php echo $this->basePath('img/linedata-banner.jpg') ?>" alt=" linedata banner" class="img-responsive">
         <div class="caption">
-            <p> <?php echo  $this->escapeHtml($Project->name) ?><div style="color:#DD0031;cursor:pointer" class="popup" onclick="PopupFunction()">
-                   <?php /* echo  $this->escapeHtml($Project->status) */?> Certification <span class="popuptext" id="myPopup">Last change :
-                      insert last change content here!!! </br><b> by ysf gouicem</b></span></div>  </p>
+            <p> <?php /*echo  $this->escapeHtml($Project->name) */?> Project name<div style="color:#DD0031">
+                   <?php /* echo  $this->escapeHtml($Project->status) */?> Certification </div>  </p>
             <center>
             <a href="<?php echo $this->url('Project') ?>">All Projects</a>
             <a href="https://www.linedata.com">My Linedata View</a>
@@ -12,6 +11,12 @@
         </div>
     </div>
 </div>
+
+<div class="latest_changes_journal col-md-12">
+  last change : Lorem ipsum dolor sit amet, id lorem mazim quando nam,
+   ipsum eleifend patrioque qui ad. Cu interesset delicatissimi eam. His elit putent at
+</div>
+
 <div class="lifecycle col-md-12">
   <center>  <div class="section_title">Timeline Space </div> </center>
   <div class="timeline" data-mode="horizontal" data-visible-items="3">
@@ -192,6 +197,12 @@
   </table>
 </div>
 </div>
+<?php
+ foreach ($Project as $row){
+   echo "<b>";  print_r($row['project_id']); print_r($row['project_name']); print_r($row['brief_description']); print_r($row['project_nature_en']); print_r($row['project_type']);echo  "</b>";
+   echo "</br>" ;
+ echo "</br>" ;
+}?>
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {

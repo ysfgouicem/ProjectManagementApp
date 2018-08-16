@@ -16,10 +16,10 @@ return array(
             'Project' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/project[/:action[/:name]]',
+                    'route'    => '/project[/:action[/:id]]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'name'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9][0-9]*',
                     ),
                     'defaults' => array(
                         'controller' => 'Project\Controller\Project',
@@ -29,10 +29,11 @@ return array(
             ),
         ),
     ),
-    
+
     'view_manager' => array(
         'template_path_stack' => array(
             'Project' => __DIR__ . '/../view',
         ),
+        'strategies' => array('ViewJsonStrategy',), 
     ),
  );

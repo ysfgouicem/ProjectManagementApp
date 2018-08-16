@@ -71,7 +71,11 @@
                   <!-- Script for the dataTables-->
         <script type="text/javascript">
               $(document).ready( function () {
-          $('table.proj').DataTable();
+          $('table.proj').DataTable(
+            { "deferRender": true,
+              pageLength : 4,
+            }
+          );
               } );
         //--------------------------------- popup script -------------------------------------------
                 function PopupFunction() {

@@ -23,17 +23,15 @@
      <th>Name</th>
      <th>Nature</th>
      <th>Brief Description</th>
-     <th>Project Leader</th>
- </tr>
+</tr>
   </thead>
   <tbody>
- <?php foreach ($ActiveProjects as $ActiveProject) : ?>
+ <?php foreach ($Project as $row) : ?>
    <tr>
-     <td><a href="<?=$this->url('Project', array('name' => $ActiveProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ActiveProject->name);?></a></td>
-     <td><?php echo $this->escapeHtml($ActiveProject->nature);?></td>
-     <td><?php echo $this->escapeHtml($ActiveProject->description);?></td>
-     <td>John doe</td>
- </tr>
+     <td><a href="<?=$this->url('Project', array('id' => print_r($row['project_id']) , 'action' => 'show'))?>"><?php  print_r($row['project_name'])?></a></td>
+     <td><?php print_r($row['project_nature_en']) ?></td>
+     <td><?php print_r($row['brief_description']) ?></td>
+</tr>
  <?php endforeach; ?>
 </tbody>
  </table>
@@ -46,19 +44,17 @@
      <th>Name</th>
      <th>Nature</th>
      <th>Brief Description</th>
-     <th>Project Leader</th>
- </tr>
+</tr>
 </thead>
 <tbody>
-  <?php foreach ($ClosedProjects as $ClosedProject) : ?>
+<?php foreach ($Project2 as $row) : ?>
  <tr>
-     <td><a href="<?=$this->url('Project', array('name' => $ClosedProject->name, 'action' => 'show'))?>"><?php echo $this->escapeHtml($ClosedProject->name);?></a></td>
-     <td><?php echo $this->escapeHtml($ClosedProject->nature);?></td>
-     <td><?php echo $this->escapeHtml($ClosedProject->description);?></td>
-     <td>John doe</td>
- </tr>
- <?php endforeach; ?>
- </tbody>
+   <td><a href="<?=$this->url('Project', array('id' => print_r($row['project_id']) , 'action' => 'show'))?>"><?php  print_r($row['project_name'])?></a></td>
+   <td><?php print_r($row['project_nature_en']) ?></td>
+   <td><?php print_r($row['brief_description']) ?></td>
+</tr>
+<?php endforeach; ?>
+</tbody>
  </table>
 
   <!--   Released projects ---------->
@@ -69,24 +65,17 @@
     <th>Name</th>
     <th>Nature</th>
     <th>Brief Description</th>
-    <th>Project Leader</th>
       </tr>
     </thead>
-
-<tbody>
-<tr>
-   <td>Project 1 </td>
-<td>fix integration</td>
-<td>waiting for EMEA region</td>
-<td>John doe</td>
-</tr>
-<tr>
-   <td>Project 2 </td>
-<td>missing feature</td>
-<td>	this is a test description 5 regions</td>
-<td>John doe</td>
-</tr>
-  </tbody>
+    <tbody>
+    <?php foreach ($Project3 as $row) : ?>
+     <tr>
+       <td><a href="<?=$this->url('Project', array('id' => (string)print_r($row['project_id']) , 'action' => 'show'))?>"><?php  print_r($row['project_name'])?></a></td>
+       <td><?php print_r($row['project_nature_en']) ?></td>
+       <td><?php print_r($row['brief_description']) ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
 </table>
 <!--   Proposed projects ---------->
 <div class="project_type_title">Proposed Projects</div>
@@ -96,24 +85,17 @@
     <th>Name</th>
     <th>Nature</th>
     <th>Brief Description</th>
-    <th>Project Leader</th>
       </tr>
     </thead>
-
-<tbody>
-  <tr>
-     <td>Project 1 </td>
-  <td>fix integration</td>
-  <td>waiting for EMEA region</td>
-  <td>John doe</td>
-  </tr>
-  <tr>
-     <td>Project 2 </td>
-  <td>missing feature</td>
-  <td>	this is a test description 5 regions</td>
-  <td>John doe</td>
-  </tr>
-  </tbody>
+    <tbody>
+    <?php foreach ($Project4 as $row) : ?>
+     <tr>
+       <td><a href="<?=$this->url('Project', array('id' => print_r($row['project_id']) , 'action' => 'show'))?>"><?php  print_r($row['project_name'])?></a></td>
+       <td><?php print_r($row['project_nature_en']) ?></td>
+       <td><?php print_r($row['brief_description']) ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
 </table>
 <div class="project_type_title">Abandoned Projects</div>
 <table id="onhold_project" class=" proj table">
@@ -122,25 +104,55 @@
     <th>Name</th>
     <th>Nature</th>
     <th>Brief Description</th>
-    <th>Project Leader</th>
       </tr>
     </thead>
-
-<tbody>
-  <tr>
-     <td>Project 1 </td>
-  <td>fix integration</td>
-  <td>waiting for EMEA region</td>
-  <td>John doe</td>
-  </tr>
-  <tr>
-     <td>Project 2 </td>
-  <td>missing feature</td>
-  <td>	this is a test description 5 regions</td>
-  <td>John doe</td>
-  </tr>
-  </tbody>
+    <tbody>
+    <?php foreach ($Project5 as $row) : ?>
+     <tr>
+       <td><a href="<?=$this->url('Project', array('id' => print_r($row['project_id']) , 'action' => 'show'))?>"><?php  print_r($row['project_name'])?></a></td>
+       <td><?php print_r($row['project_nature_en']) ?></td>
+       <td><?php print_r($row['brief_description']) ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
 </table>
+<a id="loadbook" href="#">load information</a>
+<table class = "table">
+   <tbody id = "book">
+   </tbody>
+</table>
+
+<script language = "javascript">
+$(document).ready(function(){
+   $("#loadbook").on("click", function(event){
+      $.ajax({
+         url:        '/ProjectManagementApp/public/project',
+         type:       'POST',
+         dataType:   'json',
+         async:      true,
+
+         success: function(data, status) {
+            var e = $('<tr><th>ID</th><th>Name</th><th>Nature</th><th>Nature</th>Description</tr>');
+            $('#book').html('');
+            $('#book').append(e);
+
+            for(i = 0; i < data.length; i++) {
+               book = data[i];
+               var e = $('<tr><td id ="ID"></td><td id ="Name"></td><td id="Nature"></td><td id="Description"></td></tr>');
+               $('#ID', e).html(book['id']);
+               $('#Name', e).html(book['name']);
+               $('#Nature', e).html(book['Nature']);
+               $('#Description', e).html(book['description']);
+               $('#book').append(e);
+            }
+         },
+         error : function(xhr, textStatus, errorThrown) {
+            alert('Ajax request failed.');
+         }
+      });
+   });
+});
+</script>
   <?php /* -------------------------------------------how to display array object ---------------------------------
   foreach($user as $row){
     echo "<b>";  print_r($row['name']); echo "</b>";
@@ -153,8 +165,8 @@
     echo "</br>" ;echo "</br>" ;
 }*/?>
 <?php
- foreach ($Project as $row){
-   echo "<b>";  print_r($row['global_status']); echo "</b>";
+/* foreach ($Project as $row){
+   echo "<b>";  print_r($row['project_id']); print_r($row['project_name']); print_r($row['brief_description']); print_r($row['project_nature_en']); print_r($row['project_id']);echo "</b>";
    echo "</br>" ;
  echo "</br>" ;
-}?>
+}?>*/

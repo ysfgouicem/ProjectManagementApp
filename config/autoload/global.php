@@ -14,7 +14,7 @@
  return array(
      'db' => array(
          'driver'         => 'Pdo',
-         'dsn'            => 'mysql:dbname=auth;host=localhost'  ,
+         'dsn'            => 'mysql:dbname=ken_cached_views;host=ln1ken01'  ,
          'driver_options' => array(
              \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
          )
