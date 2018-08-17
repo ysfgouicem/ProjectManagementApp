@@ -11,11 +11,6 @@ namespace Project\Controller;
      public function indexAction()
      {
        return new ViewModel(array(
-      /*    'user' => $this->getProjectTable()->userfetch(),
-      /*      'Projects' => $this->getProjectTable()->fetchAll(),
-            'ClosedProjects' => $this->getProjectTable()->fetchProjects("closed"),
-            'ActiveProjects' => $this->getProjectTable()->fetchProjects("active"),
-            'OnholdProjects' => $this->getProjectTable()->fetchProjects("on hold"),*/
             'Project' => $this->getConnection()->fetchprojectbystatus('Active'),
             'Project2' => $this->getConnection()->fetchprojectbystatus('Closed'),
             'Project3' => $this->getConnection()->fetchprojectbystatus('Released'),
@@ -24,10 +19,17 @@ namespace Project\Controller;
         ));
      }
 
-     public function editAction()
-     {
+     public function showProjectSetAction(){
+        $data = $this->getConnection()->getProject('804');
+        $request = $this->getRequest();
+        $query = $request->getQuery();
+        if ($request->isXmlHttpRequest() || $query->get('showJson') == 1) {
+          $jsonData = array($data);
+      $view = new JsonModel($jsonData);
+      $view->setTerminal(true);
+      return $view;
      }
-
+   }
 
      public function showAction()
      {
@@ -56,27 +58,5 @@ namespace Project\Controller;
          return $this->ProjectTable;
      }
 
-     public function ajaxAction() {
-   $data =$this->getConnection()->fetchprojectbystatus('Active') ;
-   $request = $this->getRequest();
-   $query = $request->getQuery();
-   if ($request->isXmlHttpRequest() || $query->get('showJson') == 1) {
-      $jsonData = array();
-      $idx = 0;
-      foreach($data as $row) { 
-         $temp = array(
-            'id' => $row['project_id'],
-            'name' => $row['project_name'],
-            'nature' => $row['project_nature_en'],
-            'description' => $row['brief_description']
-         );
-         $jsonData[$idx++] = $temp;
-      }
-      $view = new JsonModel($jsonData);
-      $view->setTerminal(true);
-   } else {
-      $view = new ViewModel();
-   }
-   return $view;
-}
+
  }

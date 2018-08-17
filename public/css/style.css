@@ -66,11 +66,14 @@ body {
 /*------ text on top image not responsive --------------------*/
 .caption {
     position: absolute;
-    top: 13%;
+    top: 10%;
     right: 5%;
     width: 50%;
     font-weight: 800;
     font-size: 50px;
+}
+#project_name{
+  font-size: 30px;
 }
 .caption p{
   color: white;
@@ -119,6 +122,9 @@ body {
   background-color: #DD0031;
   border-radius: 15px;
 
+}
+.project_name{
+  font-size: 12 px;
 }
 .latest_changes_journal{
   text-align: center;

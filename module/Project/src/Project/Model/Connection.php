@@ -20,8 +20,7 @@ from vw_all_companies c
 inner join 	vw_all_company_products acp on acp.company_id = c.id
 inner join vw_all_project_product app on app.product_id = acp.product_id
 inner join vw_all_projects ap on ap.project_id = app.project_id
-where c.is_lap="Y" and ap.status_en ="'. $status .'"
-limit 15
+where c.is_lap="Y" and ap.status_en ="'. $status .'" and app.product_id="LONG"
 ');
 $results = $statement->execute();
 return $results ;
