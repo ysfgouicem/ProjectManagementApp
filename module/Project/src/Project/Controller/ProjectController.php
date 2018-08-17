@@ -37,6 +37,8 @@ namespace Project\Controller;
        return new ViewModel (
          array(
               'Project' => $this->getConnection()->getProject($paramName),
+              'RelatedUsers' => $this->getConnection()->getRelatedUsers1($paramName),
+              'RelatedUsers2' => $this->getConnection()->getRelatedUsers2($paramName),
          ));
      }
 

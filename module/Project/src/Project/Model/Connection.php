@@ -33,4 +33,24 @@ public function getProject($id)
       $results = $statement->execute();
       return $results ;
 }
+public function getRelatedUsers1 ($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select ap.first_name , ap.last_name , ap.email_address,apm.role_en, ap.job_title
+from vw_all_project_members apm
+inner join vw_all_people ap on ap.id = apm.person_id
+where apm.project_id='.$id.'') ;
+  $results = $statement->execute();
+  return $results ;
+}
+public function getRelatedUsers2 ($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select  distinct(crpr.person_name), crpr.role
+from vw_cr_person_role   crpr
+inner join vw_cr_project  crp on crp.cr_id = crpr.cr_id
+and crp.project_id = '.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
+}
+
 }

@@ -15,7 +15,13 @@
         </div>
     </div>
 </div>
+<?php
 
+   echo "<b>";  print_r($row['project_id']);
+       echo  "</b>";
+   echo "</br>" ;
+ echo "</br>" ;
+}?>
 <div class="latest_changes_journal col-md-12">
   last change : Lorem ipsum dolor sit amet, id lorem mazim quando nam,
    ipsum eleifend patrioque qui ad. Cu interesset delicatissimi eam. His elit putent at
@@ -60,7 +66,7 @@
  </div>
 </div>
 <div class="list_people col-md-12">
-<center><div class="section_title"> Teams</div></center>
+<center><div class="section_title">Team</div></center>
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#sales">Sales</a></li>
   <li><a data-toggle="tab" href="#dev">Developement</a></li>
@@ -107,10 +113,8 @@
       <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
       <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
          <tr> <th scope="row">Farhana Chapman</th><td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td>
-             </tr>
-             <tr> <th scope="row">Eduard Sanford</th><td>Sales Strategy</td>
-              </tr>
+            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td> </tr>
+             <tr> <th scope="row">Eduard Sanford</th><td>Sales Strategy</td></tr>
               </tbody>
     </table>
   </div>
@@ -201,13 +205,17 @@
   </table>
 </div>
 </div>
-<?php
 
-   echo "<b>";  print_r($row['project_id']);
-       echo  "</b>";
-   echo "</br>" ;
- echo "</br>" ;
-}?>
+
+<?php foreach ($RelatedUsers as $user){
+print_r($user['first_name']); echo " "; print_r($user['last_name']);echo " "; print_r($user['email_address']);echo " ";echo "<b>"; print_r($user['role_en']);echo "</b>";
+echo " "; print_r($user['job_title']);
+echo "<br>";
+} ?>
+<?php foreach ($RelatedUsers2 as $user){
+print_r($user['person_name']); echo " "; print_r($user['role']);
+echo "<br>";
+} ?>
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
