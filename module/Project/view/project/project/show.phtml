@@ -68,68 +68,34 @@
 <div class="list_people col-md-12">
 <center><div class="section_title">Team</div></center>
 <ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#sales">Sales</a></li>
-  <li><a data-toggle="tab" href="#dev">Developement</a></li>
-  <li><a data-toggle="tab" href="#test">Testing</a></li>
-  <li><a data-toggle="tab" href="#certif">Certification</a></li>
-  <li><a data-toggle="tab" href="#release">Release</a></li>
+  <li class="active"><a data-toggle="tab" href="#Members">Project Members</a></li>
+  <li><a data-toggle="tab" href="#associated">Associated Users</a></li>
 </ul>
 <div class="tab-content">
-  <div id="sales" class="tab-pane fade in active">
-    <h3>Sales Team</h3>
+  <div id="Members" class="tab-pane fade in active">
+    <h3>Project Members</h3>
     <table class="table">
-      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle &nbsp <a href="mailto:joedoe@gmail.com" title="send mail to joe doe"> <span class="glyphicon glyphicon-send" aria-hidden="true"></span></a></th><td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman  &nbsp <a href="mailto:joedoe@gmail.com" title="send mail to joe doe"> <span class="glyphicon glyphicon-send" aria-hidden="true"></span></a></th> <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills  &nbsp <a href="mailto:joedoe@gmail.com" title="send mail to joe doe"> <span class="glyphicon glyphicon-send" aria-hidden="true"></span></a></th><td>Sales Strategy</td>
-             </tr>
+      <thead> <tr> <th>Name</th> <th>Role</th> </tr> </thead>
+      <tbody>
+<?php foreach ($RelatedUsers as $user){ ?>
+        <tr>
+          <th scope="row">
+            <?php print_r($user['first_name']); echo " ";print_r($user['last_name']); ?>
+            &nbsp
+             <?php  echo '('.$user['role_en'].')' ; ?>
+             <a href="mailto:<?php print_r($user['email_address']); ?>" title="send mail to   <?php print_r($user['first_name']); print_r($user['last_name']); ?>">
+               <span class="glyphicon glyphicon-send" aria-hidden="true"></span></a></th><td><?php  print_r($user['job_title']) ?></td> </tr>
+         <?php } ?>
               </tbody>
     </table>
   </div>
-  <div id="dev" class="tab-pane fade">
-    <h3>Dev Team</h3>
+  <div id="associated" class="tab-pane fade">
+    <h3>Associated users</h3>
     <table class="table">
       <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td></tr>
-         <tr> <th scope="row">Farhana Chapman</th>   <td>Data Manager</td></tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Sales Strategy</td></tr>
-              </tbody>
-    </table>
-  </div>
-  <div id="test" class="tab-pane fade">
-    <h3>Test Team</h3>
-    <table class="table">
-      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Patsy Mata</th>  <td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th>    <td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th> <td>Manager</td>
-             </tr>
-              </tbody>
-    </table>
-  </div>
-  <div id="certif" class="tab-pane fade">
-    <h3>Certification Team</h3>
-    <table class="table">
-      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th><td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td> </tr>
-             <tr> <th scope="row">Eduard Sanford</th><td>Sales Strategy</td></tr>
-              </tbody>
-    </table>
-  </div>
-  <div id="release" class="tab-pane fade">
-    <h3>Release Team</h3>
-    <table class="table">
-      <thead> <tr> <th>name</th> <th>Role</th> </tr> </thead>
-      <tbody> <tr> <th scope="row">Rhodri Searle</th><td>Senior QA</td> </tr>
-         <tr> <th scope="row">Farhana Chapman</th><td>Data Manager</td> </tr>
-            <tr> <th scope="row">Jakob Mills</th><td>Sales Strategy</td>
-             </tr>
-             <tr> <th scope="row">Cairo Haynes</th><td>Sales Strategy</td>
-              </tr>
-              <tr> <th scope="row">Arandeep Salas</th> <td>Sales Strategy</td>
-               </tr>
+      <tbody><?php foreach ($RelatedUsers2 as $user){ ?>
+         <tr> <th scope="row"><?php print_r($user['person_name']); ?></th><td><?php print_r($user['role']); ?></td></tr>
+         <?php } ?>
               </tbody>
     </table>
   </div>
@@ -207,15 +173,9 @@
 </div>
 
 
-<?php foreach ($RelatedUsers as $user){
-print_r($user['first_name']); echo " "; print_r($user['last_name']);echo " "; print_r($user['email_address']);echo " ";echo "<b>"; print_r($user['role_en']);echo "</b>";
-echo " "; print_r($user['job_title']);
+ echo " ";
 echo "<br>";
-} ?>
-<?php foreach ($RelatedUsers2 as $user){
-print_r($user['person_name']); echo " "; print_r($user['role']);
-echo "<br>";
-} ?>
+
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
