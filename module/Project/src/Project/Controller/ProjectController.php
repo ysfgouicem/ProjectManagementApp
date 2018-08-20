@@ -39,6 +39,7 @@ namespace Project\Controller;
               'Project' => $this->getConnection()->getProject($paramName),
               'RelatedUsers' => $this->getConnection()->getRelatedUsers1($paramName),
               'RelatedUsers2' => $this->getConnection()->getRelatedUsers2($paramName),
+              'CR_Journals' => $this->getConnection()->getCRJournals($paramName),
          ));
      }
 

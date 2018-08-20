@@ -33,6 +33,7 @@ public function getProject($id)
       $results = $statement->execute();
       return $results ;
 }
+
 public function getRelatedUsers1 ($id) {
   $id  = (string) $id;
   $statement  =$this ->Adapter->query('select ap.first_name , ap.last_name , ap.email_address,apm.role_en, ap.job_title
@@ -42,12 +43,33 @@ where apm.project_id='.$id.'') ;
   $results = $statement->execute();
   return $results ;
 }
+
 public function getRelatedUsers2 ($id) {
   $id  = (string) $id;
   $statement  =$this ->Adapter->query('select  distinct(crpr.person_name), crpr.role
 from vw_cr_person_role   crpr
 inner join vw_cr_project  crp on crp.cr_id = crpr.cr_id
 and crp.project_id = '.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
+}
+
+public function getCRJournals ($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select crj.cr_id , crj.journal , crj.entry_date   from vw_cr_all_journals crj
+inner join vw_cr_project crp on crp.cr_id = crj.cr_id
+where crp.project_id='.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
+}
+
+public function getCallJournals ($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select acj.call_id , acj.entry_date , acj.journal from  vw_all_call_journals acj
+inner join vw_call_project cp on cp.call_id = acj.call_id
+where crp.project_id='.$id.'
 ');
   $results = $statement->execute();
   return $results ;

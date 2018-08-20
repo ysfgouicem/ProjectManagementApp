@@ -161,12 +161,15 @@
 </div>
 <div class="latest_journal_entries col-md-12">
   <div class="panel panel-default">
-  <div class="panel-heading"><b>Recent journal / comment </b></div>
+  <div class="panel-heading"><b>Recent Call/Cr  journals  </b></div>
   <table class="table">
     <thead> <tr> <th>#</th> <th> Entery date</th> <th>Journal entry/comment</th> </tr> </thead>
     <tbody> <tr> <th scope="row"> <a href="#"> Lap-191</a></th> <td>Monday, December 31, 2018</td> <td>We are waiting for the client to give us permission</td></tr>
       <tr> <th scope="row"><a href="#"> 2045863</a></th>   <td>Friday, December 28, 2018</td> <td>Ready for release </td></tr>
-            <tr> <th scope="row"><a href="#">22015678</a></th> <td>Friday, December 7, 2018 </td> <td>Test and failed in 75.0.2 build 37300</td></tr>
+        <?php foreach ($CR_Journals as $cr2){ ?>
+            <tr style="background-color: rgba(149, 165, 166,0.5);"><th scope="row"><a href="http://ken.ad.linedata.com/processes/cr/search/details_lv.php?id=<?php print_r($cr2['cr_id']);?>"><?php print_r($cr2['cr_id']); ?></a></th> <td><?php print_r($cr2['entry_date']); ?>
+            </td> <td> <?php print_r($cr2['journal']); ?> </td></tr>
+            <?php } ?>
             </tbody>
   </table>
 </div>
