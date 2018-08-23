@@ -28,8 +28,10 @@ use Zend\View\Model\JsonModel;
        return new ViewModel (
          array(
               'Project' => $this->getConnection()->getProject($paramName),
+              'Timeline' => $this->getConnection()->getProjectTimeline(),
               'RelatedUsers' => $this->getConnection()->getRelatedUsers1($paramName),
               'RelatedUsers2' => $this->getConnection()->getRelatedUsers2($paramName),
+              'Calls_Journals' => $this->getConnection()->getCallJournals($paramName),
               'CR_Journals' => $this->getConnection()->getCRJournals($paramName),
               'Calls' => $this->getConnection()->getRelatedCalls($paramName),
          ));

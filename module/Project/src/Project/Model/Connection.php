@@ -69,7 +69,8 @@ public function getCallJournals ($id) {
   $id  = (string) $id;
   $statement  =$this ->Adapter->query('select acj.call_id , acj.entry_date , acj.journal from  vw_all_call_journals acj
 inner join vw_call_project cp on cp.call_id = acj.call_id
-where crp.project_id='.$id.'
+where cp.project_id='.$id.'
+order by acj.entry_date desc
 ');
   $results = $statement->execute();
   return $results ;
@@ -79,8 +80,16 @@ Public function getattachements ($id) {
 
 }
 
-public function getProjectStatus () {
-
+public function getProjectTimeline () {
+//  $id  = (string) $id;
+  $statement  =$this ->Adapter->query("select cat.trail , cat.update_date
+from vw_call_audit_trail cat
+where cat.callid=1940983 and cat.trail like '%status%'
+order by cat.timestamp asc
+limit 20
+  ");
+  $results = $statement->execute();
+  return $results ;
 }
 public function getRelatedCalls ($id) {
   $id  = (string) $id;
