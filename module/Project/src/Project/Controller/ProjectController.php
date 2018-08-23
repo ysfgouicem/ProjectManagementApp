@@ -1,17 +1,18 @@
 <?php
 namespace Project\Controller;
 
- use Zend\Mvc\Controller\AbstractActionController;
- use Zend\View\Model\ViewModel;
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 
  class ProjectController extends AbstractActionController
  {
     protected $ProjectTable;
     protected $Connection;
+
      public function indexAction()
-     {
-       return new ViewModel(array(
-            'Project' => $this->getConnection()->fetchprojectbystatus('Active'),
+     {          return new ViewModel(array(
+           'Project' => $this->getConnection()->fetchprojectbystatus('Active'),
             'Project2' => $this->getConnection()->fetchprojectbystatus('Closed'),
             'Project3' => $this->getConnection()->fetchprojectbystatus('Released'),
             'Project4' => $this->getConnection()->fetchprojectbystatus('Proposed'),
@@ -19,17 +20,7 @@ namespace Project\Controller;
         ));
      }
 
-     public function showProjectSetAction(){
-        $data = $this->getConnection()->getProject('804');
-        $request = $this->getRequest();
-        $query = $request->getQuery();
-        if ($request->isXmlHttpRequest() || $query->get('showJson') == 1) {
-          $jsonData = array($data);
-      $view = new JsonModel($jsonData);
-      $view->setTerminal(true);
-      return $view;
-     }
-   }
+
 
      public function showAction()
      {
@@ -40,6 +31,7 @@ namespace Project\Controller;
               'RelatedUsers' => $this->getConnection()->getRelatedUsers1($paramName),
               'RelatedUsers2' => $this->getConnection()->getRelatedUsers2($paramName),
               'CR_Journals' => $this->getConnection()->getCRJournals($paramName),
+              'Calls' => $this->getConnection()->getRelatedCalls($paramName),
          ));
      }
 

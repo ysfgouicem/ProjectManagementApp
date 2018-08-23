@@ -34,5 +34,8 @@ return array(
         'template_path_stack' => array(
             'Project' => __DIR__ . '/../view',
         ),
+        'strategies' => array (
+                       'ViewJsonStrategy'
+               )
     ),
  );

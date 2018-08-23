@@ -59,7 +59,7 @@ public function getCRJournals ($id) {
   $id  = (string) $id;
   $statement  =$this ->Adapter->query('select crj.cr_id , crj.journal , crj.entry_date   from vw_cr_all_journals crj
 inner join vw_cr_project crp on crp.cr_id = crj.cr_id
-where crp.project_id='.$id.'
+where crp.project_id='.$id.' order by crj.entry_date desc
 ');
   $results = $statement->execute();
   return $results ;
@@ -75,4 +75,20 @@ where crp.project_id='.$id.'
   return $results ;
 }
 
+Public function getattachements ($id) {
+
+}
+
+public function getProjectStatus () {
+
+}
+public function getRelatedCalls ($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select  c.callid , c.call_type , c.call_status from vw_call_log c
+inner join vw_call_project cp on cp.call_id=c.callid
+where cp.project_id='.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
+}
 }

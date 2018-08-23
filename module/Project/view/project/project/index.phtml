@@ -116,23 +116,3 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-<a  id="loadactive" href="#"> fetch all active projects with ajax </a>
-<script language = "javascript">
-$(document).ready(function(){
-   $("#loadactive").on("click", function(event){
-      $.ajax({
-         url:        '/ProjectManagementApp/public/project',
-         type:       'POST',
-         dataType:   'json',
-         async:      true,
-
-         success: function(data, status) {
-           console.log(data);
-         },
-         error : function(xhr, textStatus, errorThrown) {
-            alert('Ajax request failed.' + errorThrown);
-         }
-      });
-   });
-});
-</script>

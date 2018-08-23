@@ -16,11 +16,6 @@
     </div>
 </div>
 <?php
-
-   echo "<b>";  print_r($row['project_id']);
-       echo  "</b>";
-   echo "</br>" ;
- echo "</br>" ;
 }?>
 <div class="latest_changes_journal col-md-12">
   last change : Lorem ipsum dolor sit amet, id lorem mazim quando nam,
@@ -106,21 +101,20 @@
   <table id="issue_tracker" class="issue_tracker table">
     <thead>
   <tr class="table_header">
+    <th>#</th>
       <th>Call Type</th>
-      <th> Open</th>
-      <th> In Dev </th>
-      <th> Testing</th>
-      <th> Closed</th>
+      <th>Call status</th>
+
   </tr>
    </thead>
    <tbody>
+     <?php foreach ($Calls as $call){ ?>
     <tr>
-      <td>womeg1</td>
-      <td>womeg2</td>
-      <td>womeg3</td>
-      <td>womeg4</td>
-      <td>womeg5</td>
+      <td> <a href="http://ken.ad.linedata.com/processes/call_log/call_details.php?type=ONE&id=<?php print_r($call['callid']); ?>"> <?php print_r($call['callid']); ?> </a> </td>
+      <td><?php print_r($call['call_type']); ?></td>
+      <td><?php print_r($call['call_status']); ?></td>
   </tr>
+  <?php } ?>
   </tbody>
   </table>
 </div>
@@ -159,6 +153,7 @@
   </table>
 </div>
 </div>
+    <!--had to remove the "entered by " because query  takes too long to respond after adding the join  -->
 <div class="latest_journal_entries col-md-12">
   <div class="panel panel-default">
   <div class="panel-heading"><b>Recent Call/Cr  journals  </b></div>
@@ -174,11 +169,6 @@
   </table>
 </div>
 </div>
-
-
- echo " ";
-echo "<br>";
-
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
@@ -242,60 +232,4 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-</script>
-<script type="text/javascript">
-/* Formatting function for row details - modify as you need */
-function format ( d ) {
-  // `d` is the original data object for the row
-  return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-      '<tr>'+
-          '<td>Full name:</td>'+
-          '<td>'+d.name+'</td>'+
-      '</tr>'+
-      '<tr>'+
-          '<td>Extension number:</td>'+
-          '<td>'+d.extn+'</td>'+
-      '</tr>'+
-      '<tr>'+
-          '<td>Extra info:</td>'+
-          '<td>And any further details here (images etc)...</td>'+
-      '</tr>'+
-  '</table>';
-}
-
-$(document).ready(function() {
-    var table = $('#example').DataTable( {
-        "ajax": "../ajax/data/objects.txt",
-        "columns": [
-            {
-                "className":      'details-control',
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": ''
-            },
-            { "data": "name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "salary" }
-        ],
-        "order": [[1, 'asc']]
-    } );
-
-    // Add event listener for opening and closing details
-    $('#issue_tracker tbody').on('click', 'td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = table.row( tr );
-
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        }
-        else {
-            // Open this row
-            row.child( format(row.data()) ).show();
-            tr.addClass('shown');
-        }
-    } );
-} );
 </script>
