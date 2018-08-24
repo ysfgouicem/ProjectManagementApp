@@ -11,7 +11,9 @@ use Zend\View\Model\JsonModel;
     protected $Connection;
 
      public function indexAction()
-     {          return new ViewModel(array(
+     {
+      //  var_dump( $this->getConnection()->fetchprojectbystatus('Active')->current()) ;
+         return new ViewModel(array(
            'Project' => $this->getConnection()->fetchprojectbystatus('Active'),
             'Project2' => $this->getConnection()->fetchprojectbystatus('Closed'),
             'Project3' => $this->getConnection()->fetchprojectbystatus('Released'),
@@ -25,15 +27,18 @@ use Zend\View\Model\JsonModel;
      public function showAction()
      {
        $paramName = $this->getEvent()->getRouteMatch()->getParam('id');
+      // var_dump($this->getConnection()->getlastchange($paramName)->current()) ;
        return new ViewModel (
          array(
               'Project' => $this->getConnection()->getProject($paramName),
-              'Timeline' => $this->getConnection()->getProjectTimeline(),
+              'Timeline' => $this->getConnection()->getProjectTimeline($paramName),
               'RelatedUsers' => $this->getConnection()->getRelatedUsers1($paramName),
               'RelatedUsers2' => $this->getConnection()->getRelatedUsers2($paramName),
               'Calls_Journals' => $this->getConnection()->getCallJournals($paramName),
               'CR_Journals' => $this->getConnection()->getCRJournals($paramName),
               'Calls' => $this->getConnection()->getRelatedCalls($paramName),
+              'Last'=> $this->getConnection()->getlastchange($paramName),
+              'CRs' => $this->getConnection()->getRelatedCrs($paramName),
          ));
      }
 

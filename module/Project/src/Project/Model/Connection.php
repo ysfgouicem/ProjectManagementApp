@@ -70,21 +70,23 @@ public function getCallJournals ($id) {
   $statement  =$this ->Adapter->query('select acj.call_id , acj.entry_date , acj.journal from  vw_all_call_journals acj
 inner join vw_call_project cp on cp.call_id = acj.call_id
 where cp.project_id='.$id.'
-order by acj.entry_date desc
+order by acj.entry_date  desc , acj.timestamp  desc
 ');
   $results = $statement->execute();
   return $results ;
 }
 
+
 Public function getattachements ($id) {
 
 }
 
-public function getProjectTimeline () {
-//  $id  = (string) $id;
+public function getProjectTimeline ($id) {
+  $id  = (string) $id;
   $statement  =$this ->Adapter->query("select cat.trail , cat.update_date
 from vw_call_audit_trail cat
-where cat.callid=1940983 and cat.trail like '%status%'
+inner join vw_call_project cp on cp.call_id = cat.callid
+where cp.project_id=".$id." and cat.trail like '%status%'
 order by cat.timestamp asc
 limit 20
   ");
@@ -100,4 +102,26 @@ where cp.project_id='.$id.'
   $results = $statement->execute();
   return $results ;
 }
+
+public function  getlastchange($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select acj.call_id , acj.entry_date , acj.journal from  vw_all_call_journals acj
+inner join vw_call_project cp on cp.call_id = acj.call_id
+where cp.project_id='.$id.'
+order by acj.entry_date  desc , acj.timestamp  desc
+limit 1
+');
+  $results = $statement->execute();
+  return $results ;
+}
+
+public function getRelatedCrs($id) {
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select cr.cr_id  from vw_cr_project cr
+where cr.project_id = '.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
+}
+
 }

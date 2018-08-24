@@ -18,8 +18,10 @@
 <?php
 }?>
 <div class="latest_changes_journal col-md-12">
-  last change : Lorem ipsum dolor sit amet, id lorem mazim quando nam,
-   ipsum eleifend patrioque qui ad. Cu interesset delicatissimi eam. His elit putent at
+  last change : <?php foreach ($Last as $change){
+    print_r($change['journal']);
+  }
+     ?>
 </div>
 
 <div class="lifecycle col-md-12">
@@ -98,6 +100,18 @@
   </tbody>
   </table>
 </div>
+<div class=" col-md-12">
+<div style="color : red;">
+  <b>
+   Related CRs
+ </b>
+ </div>
+  <ul>
+    <?php foreach ($CRs as $cr){  ?>
+    <li> <a href="http://ken.ad.linedata.com/processes/cr/search/details_lv.php?id=<?php   print_r($cr['cr_id']); ?>"> <?php   print_r($cr['cr_id']); ?> </a> </li>
+  <?php } ?>
+  </ul>
+</div>
 <div class="latest_changes col-md-6">
 <center><div class="section_title"> Certifications </div> </center>
   <div class="panel panel-success">
@@ -123,14 +137,7 @@
 <div class="related_documents col-md-12">
   <div class="panel panel-default">
   <div class="panel-heading">Related Documents</div>
-  <table class="table">
-    <thead> <tr> <th>Name</th> <th>Size</th> <th>Type</th> <th>Date</th> <th>Modified</th><th>Author</th> </tr> </thead>
-    <tbody> <tr> <th scope="row">UBSoptaigo.png</th> <td>84.84 KB</td><td>PNG</td> <td>Tue, 06 Mar 2018 10:22:05</td> <td> Mon, 06 Aug 2018 10:22:05</td><td>Anastasia Allan</td> </tr>
-       <tr> <th scope="row">UBS_option_Issue_call.msg</th>   <td> 51.95 KB</td> <td>MSG</td><td>Tue, 24 Jul 2018 10:34:21 </td> <td>Thu, 06 Sep 2018 10:22:05 </td><td>Martine Estes</td> </tr>
-          <tr> <th scope="row">LVUBS_option_interface.zip</th> <td>18.59 MB</td><td>ZIP</td> <td>Fri, 13 Jul 2018 10:34:21</td> <td>Sat, 06 Oct 2018 10:22:05</td> <td>Fabian Rahman</td>
-           </tr>
-            </tbody>
-  </table>
+<a href="c:/">Partner Directory q</a>
 </div>
 </div>
 
