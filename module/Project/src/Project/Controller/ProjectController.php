@@ -41,10 +41,13 @@ use Zend\View\Model\JsonModel;
           //echo "No match: " . $line;
     }
 }*/
-      // var_dump($this->getConnection()->getlastchange($paramName)->current()) ;
+
+    // var_dump($this->getConnection()->getlastchange($paramName)->current()) ;
+
        return new ViewModel (
          array(
               'Project' => $this->getConnection()->getProject($paramName),
+              'Project_status'=>  $this->getConnection()->getProjectStatus($paramName),
               'Timeline' => $this->getConnection()->getProjectTimeline($paramName),
               'RelatedUsers' => $this->getConnection()->getRelatedUsers1($paramName),
               'RelatedUsers2' => $this->getConnection()->getRelatedUsers2($paramName),
@@ -54,6 +57,7 @@ use Zend\View\Model\JsonModel;
               'Last'=> $this->getConnection()->getlastchange($paramName),
               'CRs' => $this->getConnection()->getRelatedCrs($paramName),
               'Versions' => $this->getConnection()->getversions($paramName),
+              'Attachements' => $this->getConnection()->getattachements($paramName),
          ));
      }
 

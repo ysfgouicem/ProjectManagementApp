@@ -7,7 +7,9 @@
         <div class="caption">
             <p><div class=" project_name" id="project_name">
            <?php  print_r($row['project_name'])?>  </div><div style="color:#DD0031 ;">
-                   <?php /* echo  $this->escapeHtml($Project->status) */?> Certification </div>  </p>
+                   <?php foreach ($Project_status as $proj) {
+                    print_r($proj ['call_status']);
+                   } ?>  </div>  </p>
             <center>
             <a href="<?php echo $this->url('Project') ?>">All Projects</a>
             <a href="https://www.linedata.com">My Linedata View</a>
@@ -123,7 +125,7 @@
       </ul>
       </div>
     </div>
-    <div class="panel panel-danger">
+<!--    <div class="panel panel-danger">
         <div class="panel-heading">Versions To Be Certified</div>
         <div class="panel-body"><ul>
           <li><b>7.5.2.0003 </b> , Hosted deployment set for SEG and notification sent to TTI only</li>
@@ -131,14 +133,35 @@
           <li> comment :</li>
           <textarea name="name" rows="8" cols="60"></textarea>
         </ul></div>
-      </div>
+      </div> -->
 </div>
 <div class="stats col-md-6">
   <center><div class="section_title">Statistics</div><center>
-    APAC :  <br>
-    AMEA :  <br>
-    US   :   <br>
+<center>
+    APAC :&nbsp <input type="checkbox"> <br>
+    AMEA :&nbsp <input type="checkbox"> <br>
+    US   : &nbsp<input type="checkbox">  <br>
+  </center>
 </div>
+<!--  Attachements Section -->
+<div class="col-md-12">
+  <center><div class="section_title"> Attachements </div> </center>
+  <table id="Attachcemnts"class="proj table">
+    <thead>
+  <tr class="table_header">
+      <th>link</th>
+</tr>
+   </thead>
+   <tbody>
+  <?php foreach ($Attachements as $attach) : ?>
+    <tr>
+      <td><?php print_r($attach['link']) ?></td>
+ </tr>
+  <?php endforeach; ?>
+ </tbody>
+  </table>
+</div>
+
     <!--had to remove the "entered by " because query  takes too long to respond after adding the join  -->
 <div class="latest_journal_entries col-md-12">
   <div class="panel panel-default">

@@ -79,7 +79,7 @@ order by acj.entry_date  desc , acj.timestamp  desc
 
 public function getversions ($id){
   $id  = (string) $id;
-  $statement  =$this ->Adapter->query('select  vf.build_found
+  $statement  =$this ->Adapter->query('select  distinct(vf.build_found)
 from vw_cr_version_found vf
 inner join vw_cr_project cp on cp.cr_id= vf.cr_id
 where cp.project_id='.$id.'
@@ -96,6 +96,18 @@ inner join vw_call_project cp on cp.call_id = cat.callid
 where cp.project_id=".$id." and cat.trail like '%status%'
 order by cat.timestamp asc
 limit 20
+  ");
+  $results = $statement->execute();
+  return $results ;
+}
+
+public function getProjectStatus($id){
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query("select  c.call_status from vw_call_log c
+inner join vw_call_project cp on cp.call_id=c.callid
+where cp.project_id=".$id."
+order by cp.call_id desc
+limit 1
   ");
   $results = $statement->execute();
   return $results ;
@@ -126,6 +138,19 @@ public function getRelatedCrs($id) {
   $id  = (string) $id;
   $statement  =$this ->Adapter->query('select cr.cr_id  from vw_cr_project cr
 where cr.project_id = '.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
+}
+
+public function getattachements($id){
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select aa.link
+from vw_all_attachments aa
+left join vw_all_company_products  acp on aa.company_id = acp.company_id
+left join vw_all_project_product app on acp.product_id = app.product_id
+where app.project_id='.$id.'
+order by aa.date_added desc
 ');
   $results = $statement->execute();
   return $results ;
