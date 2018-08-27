@@ -77,8 +77,15 @@ order by acj.entry_date  desc , acj.timestamp  desc
 }
 
 
-Public function getattachements ($id) {
-
+public function getversions ($id){
+  $id  = (string) $id;
+  $statement  =$this ->Adapter->query('select  vf.build_found
+from vw_cr_version_found vf
+inner join vw_cr_project cp on cp.cr_id= vf.cr_id
+where cp.project_id='.$id.'
+');
+  $results = $statement->execute();
+  return $results ;
 }
 
 public function getProjectTimeline ($id) {

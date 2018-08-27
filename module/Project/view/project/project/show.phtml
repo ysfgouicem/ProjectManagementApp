@@ -117,8 +117,9 @@
   <div class="panel panel-success">
       <div class="panel-heading">Tested Versions</div>
       <div class="panel-body"><ul>
-        <li>7.1.3.0003</li>
-        <li>7.4.2.0000</li>
+          <?php foreach ($Versions as $version){  ?>
+        <li> <?php print_r($version['build_found']); ?></li>
+        <?php } ?>
       </ul>
       </div>
     </div>
@@ -137,11 +138,6 @@
     APAC :  <br>
     AMEA :  <br>
     US   :   <br>
-</div>
-<div class="related_documents col-md-12">
-  <div class="panel panel-default">
-  <div class="panel-heading">Related Documents</div>
-</div>
 </div>
     <!--had to remove the "entered by " because query  takes too long to respond after adding the join  -->
 <div class="latest_journal_entries col-md-12">

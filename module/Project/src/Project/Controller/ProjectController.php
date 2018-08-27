@@ -53,6 +53,7 @@ use Zend\View\Model\JsonModel;
               'Calls' => $this->getConnection()->getRelatedCalls($paramName),
               'Last'=> $this->getConnection()->getlastchange($paramName),
               'CRs' => $this->getConnection()->getRelatedCrs($paramName),
+              'Versions' => $this->getConnection()->getversions($paramName),
          ));
      }
 
