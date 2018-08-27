@@ -27,6 +27,20 @@ use Zend\View\Model\JsonModel;
      public function showAction()
      {
        $paramName = $this->getEvent()->getRouteMatch()->getParam('id');
+    /*   $fp = fopen('C:\Users\YgouicemLakhal\Desktop\womeg.txt', 'r') or die("cannot open file !! \n") ;
+       $lines = file('C:\Users\YgouicemLakhal\Desktop\womeg.txt');
+       $i =0 ;
+       while ($line = fgets($fp, 1024)) {
+    if (preg_match("/redburn/", $line)) {
+      $i++ ;
+        echo $i." Found match:" ;
+        echo "\n";
+        echo $lines[$i-1] ;
+    } else {
+      $i++;
+          //echo "No match: " . $line;
+    }
+}*/
       // var_dump($this->getConnection()->getlastchange($paramName)->current()) ;
        return new ViewModel (
          array(

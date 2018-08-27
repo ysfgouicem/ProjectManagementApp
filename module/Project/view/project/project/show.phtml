@@ -123,24 +123,26 @@
       </div>
     </div>
     <div class="panel panel-danger">
-        <div class="panel-heading">Versions To Be Tested</div>
+        <div class="panel-heading">Versions To Be Certified</div>
         <div class="panel-body"><ul>
-          <li>7.5.2.0003</li>
-          <li>7.5.1.0000</li>
+          <li><b>7.5.2.0003 </b> , Hosted deployment set for SEG and notification sent to TTI only</li>
+          <li> add version   : <input type="text" placeholder="new version here  &nbsp....."></li>
+          <li> comment :</li>
+          <textarea name="name" rows="8" cols="60"></textarea>
         </ul></div>
       </div>
 </div>
 <div class="stats col-md-6">
   <center><div class="section_title">Statistics</div><center>
-  <canvas id="myChart"></canvas>
+    APAC :  <br>
+    AMEA :  <br>
+    US   :   <br>
 </div>
 <div class="related_documents col-md-12">
   <div class="panel panel-default">
   <div class="panel-heading">Related Documents</div>
-<a href="c:/">Partner Directory q</a>
 </div>
 </div>
-
     <!--had to remove the "entered by " because query  takes too long to respond after adding the join  -->
 <div class="latest_journal_entries col-md-12">
   <div class="panel panel-default">
@@ -159,67 +161,3 @@
   </table>
 </div>
 </div>
-<script>
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["US", "EMEA", "APAC"],
-        datasets: [{
-            label: 'Developement',
-            data: [100, 75, 60],
-            backgroundColor: [
-                'rgba(0, 0, 0, 0.7)',
-                'rgba(0, 0, 0, 0.7)',
-                'rgba(0, 0, 0, 0.7)'
-            ],
-            borderColor: [
-                'rgba(149, 165, 166,0.5)',
-                'rgba(149, 165, 166,0.5)',
-                'rgba(149, 165, 166,0.5)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 'Testing',
-            data: [60, 100, 70],
-            backgroundColor: [
-                'rgba(149, 165, 166,0.7)',
-                'rgba(149, 165, 166,0.7)',
-                'rgba(149, 165, 166,0.7)'
-            ],
-            borderColor: [
-                'rgba(149, 165, 166,0.5)',
-                'rgba(149, 165, 166,0.5)',
-                'rgba(149, 165, 166,0.5)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 'Certification',
-            data: [75, 70, 100],
-            backgroundColor: [
-                'rgba(183, 25, 40, 0.7)',
-                'rgba(183, 25, 40, 0.7)',
-                'rgba(183, 25, 40, 0.7)'
-            ],
-            borderColor: [
-                'rgba(149, 165, 166,0.5)',
-                'rgba(149, 165, 166,0.5)',
-                'rgba(149, 165, 166,0.5)'
-            ],
-            borderWidth: 1
-        }
-      ]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
